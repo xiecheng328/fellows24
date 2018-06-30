@@ -3,7 +3,35 @@
 
 /* header 开始 */
 #header{
+    height: 32px;
+    background: #f2f2f2;
+    /*background: #cccccc;*/
+    font-size: 12px;
+    line-height: 32px; /* 单行文字垂直居中：行高=高度 */
+}
 
+#login-info{
+    float: left;
+}
+
+#quick-menu{
+    float: right;
+}
+
+#quick-menu .menu{
+    float: left;
+}
+
+#header a, #login-info span{
+    color: #999;
+}
+
+#header a{
+    padding: 0 14px;
+}
+
+#header a:hover{
+    color: #FF0036;
 }
 
 

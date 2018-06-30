@@ -13,3 +13,9 @@ li{
 a{
     text-decoration: none;
 }
+
+.wrapper{
+    width: 1230px;
+    height: 100%;
+    margin: 0 auto;
+}
