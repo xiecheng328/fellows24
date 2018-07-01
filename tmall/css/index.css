@@ -20,6 +20,8 @@
 
 #quick-menu .menu{
     float: left;
+    /*background: #222;*/
+    position: relative;
 }
 
 #header a, #login-info span{
@@ -31,6 +33,26 @@
 }
 
 #header a:hover{
+    color: #FF0036;
+}
+
+#header .triangle::after{
+    content: '';
+    border-width: 3px;
+    border-style: solid;
+    border-top-color: #bbb;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    width: 0;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    margin-top: -2px;
+}
+
+#header .icon-gouwuchekong{
+    font-size: 12px;
     color: #FF0036;
 }
 

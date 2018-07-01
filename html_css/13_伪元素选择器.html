@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* 伪元素选择器 */
+        #div1::before{
+            content: 'aa';
+            /*background: #ff0000;*/
+            /*display: block;*/
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div1">唯创网讯</div>
+</body>
+</html>
