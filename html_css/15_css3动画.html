@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            border: 1px dashed;
+            margin: 100px auto;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+
+
+
+            /*-webkit-transition: transform 1s linear;*/
+            /*-moz-transition: transform 1s linear;*/
+            /*-ms-transition: transform 1s linear;*/
+            /*-o-transition: transform 1s linear;*/
+            transition: all 1s linear;
+
+            transform-origin: 150px 100px;
+        }
+
+
+        #div2:hover{
+            -webkit-transform: rotate(30deg);
+            -moz-transform: rotate(30deg);
+            -ms-transform: rotate(30deg);
+            -o-transform: rotate(30deg);
+            transform: rotate(30deg);
+
+            background: #00ff00;
+            /*width: 500px;*/
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">唯创</div>
+    </div>
+</body>
+</html>

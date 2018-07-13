@@ -5,9 +5,10 @@
 #header{
     height: 32px;
     background: #f2f2f2;
-    /*background: #cccccc;*/
+    /*background: #cccccc; 注释*/
     font-size: 12px;
     line-height: 32px; /* 单行文字垂直居中：行高=高度 */
+    border-bottom: 1px solid #e5e5e5;
 }
 
 #login-info{
@@ -22,6 +23,7 @@
     float: left;
     /*background: #222;*/
     position: relative;
+    padding: 0 14px;
 }
 
 #header a, #login-info span{
@@ -29,8 +31,10 @@
 }
 
 #header a{
-    padding: 0 14px;
+    /*padding: 0 14px;*/
 }
+
+
 
 #header a:hover{
     color: #FF0036;
@@ -49,11 +53,47 @@
     right: 4px;
     top: 50%;
     margin-top: -2px;
+
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+    transform-origin: 3px 1.5px;
 }
 
 #header .icon-gouwuchekong{
     font-size: 12px;
     color: #FF0036;
+}
+
+#login-info .register{
+    padding: 0;
+}
+
+#header .triangle:hover::after{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+
+    -webkit-transition: transform .5s ease;
+    -moz-transition: transform .5s ease;
+    -ms-transition: transform .5s ease;
+    -o-transition: transform .5s ease;
+    transition: transform .5s ease;
+}
+
+#header .triangle{
+    border-style: solid;
+    border-color: transparent;
+    border-width: 0 1px 0 1px;
+}
+
+#header .triangle:hover{
+    background-color: #fff;
+    border-color: #e5e5e5;
 }
 
 
