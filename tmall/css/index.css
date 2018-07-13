@@ -24,6 +24,7 @@
     /*background: #222;*/
     position: relative;
     padding: 0 14px;
+    height: 33px;
 }
 
 #header a, #login-info span{
@@ -94,6 +95,68 @@
 #header .triangle:hover{
     background-color: #fff;
     border-color: #e5e5e5;
+    cursor: pointer;
+}
+
+#header .triangle:hover > a{
+    text-decoration: underline;
+    color: #FF0036;
+}
+
+#header .triangle:hover .submenu{
+    display: block;
+}
+
+#quick-menu .submenu a:hover{
+    text-decoration: underline;
+}
+
+#quick-menu .submenu{
+    position: absolute;
+    top: 32px;
+    left: -1px;
+    width: 74px;
+    border-style: solid;
+    border-color: #e5e5e5;
+    border-width: 0 1px 1px 1px;
+    padding: 0 14px;
+    display: none;
+}
+
+#quick-menu .split{
+    width: 1px;
+    height: 14px;
+    background: #ccc;
+    padding: 0;
+    margin: 9px 5px;
+}
+
+#quick-menu .qr-code{
+    width: 175px;
+    height: 227px;
+    border: 1px solid #e5e5e5;
+    position: absolute;
+    top: 28px;
+    left: -58px;
+    background: #fff;
+    box-shadow: 0 0 5px #aaa;
+    display: none;
+}
+
+#quick-menu .qr-code::after{
+    content: '';
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -10px;
+    left: 85px;
+}
+
+#quick-menu .mobile:hover .qr-code{
+    display: block;
 }
 
 
