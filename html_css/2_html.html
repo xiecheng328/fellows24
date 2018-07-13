@@ -22,6 +22,19 @@
             #parent{
                 width: 500px;
             }
+
+
+            #block1{
+                width: 200px;
+                height: 200px;
+                background: #ff0000;
+            }
+
+            #inline1{
+                width: 200px;
+                height: 200px;
+                background: #0f0;
+            }
         </style>
     </head>
     <body>
@@ -93,11 +106,13 @@
             <a>span</a>
         </p>
 
+        <div id="block1">块级元素div</div>
+        <span id="inline1">行级元素span</span>
     </body>
 </html>
 <!--
-块级元素block:自己占一行显示 h1~h6 li ol ul table p
-行级元素inline:行级元素和行级元素会在一行显示 a span
+块级元素block:自己占一行显示 可以设置宽高 h1~h6 li ol ul table p div
+行级元素inline:行级元素和行级元素会在一行显示 不能设置宽高 宽高是内容撑开的  a span
 行块级元素：img
 
 

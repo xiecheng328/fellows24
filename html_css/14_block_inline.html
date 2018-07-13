@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #block1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+
+            /*display: inline;*/
+        }
+
+        #inline1{
+            width: 200px;
+            height: 200px;
+            background: #0f0;
+
+            /*display: block;*/
+            /*float: left;*/
+            position: absolute;
+        }
+
+        .aa{
+            width: 200px;
+            height: 200px;
+            background: #cccccc;
+            /*float: left;*/
+            display: inline-block;
+        }
+
+        #pic1{
+            height: 300px;
+        }
+
+        #username{
+            width: 120px;
+            height: 30px;
+
+            outline: none;
+        }
+
+        #ta{
+            resize: none;
+        }
+
+        #div1, #div2{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            /*padding: 20px;*/
+            /*border: 10px solid #000;*/
+            /*margin: 50px;*/
+        }
+        #span1{
+            background: #00ff00;
+            /*padding: 30px;*/
+            margin: 30px;
+        }
+        .span{
+            background: #cccccc;
+        }
+    </style>
+</head>
+<body>
+
+    <!--<div id="block1">块级元素div</div>-->
+    <!--<span id="inline1">行级元素span</span>-->
+    <!--<span>span2</span>-->
+
+
+    <!--<div class="aa">div01</div>-->
+    <!--<div class="aa">div02</div>-->
+    <!--<div class="aa">div03</div>-->
+
+    <!--<img src="pic.jpg" alt="" id="pic1">-->
+    <!--<img src="pic.jpg" alt="">-->
+
+
+    <form action="user/regist">
+        <label for="username">用户名：</label>
+        <input type="text" id="username">
+
+        <br>
+
+        <label>
+            密码
+            <input type="password" id="pwd">
+        </label>
+
+        <br>
+
+            性别：
+            <input type="radio" name="sex">男
+            <input type="radio" name="sex">女
+        <br>
+            爱好:
+        <input type="checkbox" name="hobby">足球
+        <input type="checkbox" name="hobby">篮球
+        <input type="checkbox" name="hobby">排球
+
+        <br>
+            <select name="" id="">
+                <option value="">哈尔滨</option>
+                <option value="">齐齐哈尔</option>
+                <option value="">大庆</option>
+            </select>
+        <br>
+            备注：
+        <textarea name="" id="ta" cols="30" rows="10"></textarea>
+
+
+
+        <input type="submit" value="注册">
+        <input type="reset">
+
+
+    </form>
+    <div id="div1">这是一个div</div>
+    <span class="span">span</span><span id="span1">一个span</span><span class="span">span</span>
+
+    <div id="div2">又一个div</div>
+
+</body>
+</html>
+
+<!--
+块级元素block:自己占一行显示 可以设置宽高 h1~h6 li ol ul table p div
+行级元素inline:行级元素和行级元素会在一行显示 不能设置宽高 宽高是内容撑开的  a span
+行块级元素：img input
+
+行级 -> 块级 : display:block;
+块级 -> 行级 : display:inline;
+
+display:inline-block; 不支持IE6
+
+-->
