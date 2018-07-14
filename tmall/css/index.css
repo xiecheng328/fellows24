@@ -164,6 +164,10 @@
 
 
 /* logo-search 开始 */
+#logo-search{
+    height: 135px;
+}
+
 #logo, #search{
     float: left;
 }
@@ -230,5 +234,69 @@
 }
 
 /* logo-search 结束 */
+
+
+/* main-nav 开始 */
+#main-nav .nav{
+    margin-left: 200px;
+    height: 35px;
+}
+
+#main-nav .nav li{
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    margin-right: 15px;
+}
+
+#main-nav .nav-img{
+    width: 100px;
+}
+
+#main-nav .nav a{
+    font-size: 16px;
+    color: #333333;
+    font-weight: 500;
+}
+
+
+#main-nav .nav a:hover{
+    color: #FF0036;
+}
+
+#banner{
+    background-color: #042769;
+}
+
+#banner .wrapper{
+    height: 500px;
+    background: url(../img/banner1.webp) no-repeat center;
+    position: relative;
+}
+
+#banner .category-type{
+    width: 200px;
+    height: 536px;
+    background-color: rgba(0, 0, 0, .55);
+    position: absolute;
+    top: -36px;
+}
+
+#banner .category-type li{
+    height: 36px;
+    padding-left: 10px;
+    line-height: 36px;
+}
+
+#banner .category-type span, #banner .category-type i{
+    color: #fff;
+}
+
+#banner .product-type{
+    background-color: #FF0036;
+}
+
+
+/* main-nav 结束 */
 
 
