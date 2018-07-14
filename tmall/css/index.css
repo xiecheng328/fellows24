@@ -121,6 +121,7 @@
     border-width: 0 1px 1px 1px;
     padding: 0 14px;
     display: none;
+    background: #ffffff;
 }
 
 #quick-menu .split{
@@ -159,7 +160,75 @@
     display: block;
 }
 
-
-
-
 /* header 结束 */
+
+
+/* logo-search 开始 */
+#logo, #search{
+    float: left;
+}
+
+#logo img{
+    width: 240px;
+}
+
+#search{
+    margin-top: 38px;
+    margin-left: 50px;
+}
+
+#search .search-ipt{
+    width: 483px;
+    height: 32px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    text-indent: 10px;
+}
+
+#search .search-box{
+    border: 2px solid #FF0036;
+    width: 625px;
+    height: 36px;
+}
+
+#search .search-btn{
+    width: 132px;
+    height: 36px;
+    border: none;
+    background: #FF0036;
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    float: right;
+}
+
+#search .hot{
+    float: left;
+    border-right: 1px solid #ccc;
+    padding: 0 12px;
+    height: 15px;
+    line-height: 15px;
+}
+
+#search .hot a{
+    color: #999;
+    font-size: 12px;
+}
+
+#search .hot-query{
+    margin-top: 5px;
+}
+
+#search .hot-query-highlight a{
+    color: #FF0036;
+}
+
+#search .last{
+    border-right: none;
+}
+
+/* logo-search 结束 */
+
+
