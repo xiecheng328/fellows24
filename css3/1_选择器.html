@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*.aa~li{
+            background: #ff0000;
+        }
+
+        input[name]{
+            background: #ff0000;
+        }
+        input[name]:focus{
+            background: #00ff00;
+        }
+
+        #div1{
+            width: 150px;
+            border: 1px solid;
+        }
+
+        #div1:first-line{
+            background: #ff0000;
+        }*/
+
+        /*#ul1 li:not(.aa){
+            background: #ff0000;
+        }*/
+
+        /*#ul1 li:first-child{
+            background: #ff0000;
+        }
+
+        #ul1 li:last-child{
+            background: #00ff00;
+        }
+
+        ul li:only-child{
+            background: #cccccc;
+        }*/
+
+        /*#ul1 li:nth-last-child(6){
+            background: #ff0000;
+        }*/
+
+        #ul1 li:first-of-type{
+            background: #ff0000;
+        }
+
+        h1:first-of-type{
+            background: #ff0000;
+        }
+
+        input:checked + span {
+            background: #f00;
+        }
+        input:checked + span::after {
+            content: " 我被选中了";
+        }
+    </style>
+</head>
+<body>
+    <div id="div2">
+        <div>div</div>
+        <h1>hhhh</h1>
+        <p>ppp</p>
+    </div>
+
+    <div id="div3">
+        <p>pppp</p>
+        <h1>h1h1h1</h1>
+    </div>
+
+    <ul id="ul1">
+        <li>001</li>
+        <li class="aa">002</li>
+        <li>003</li>
+        <li class="aa">004</li>
+        <li>005</li>
+    </ul>
+    <ul>
+        <li>结构性伪类选择符 E:only-child</li>
+    </ul>
+    <h1>有多个子元素</h1>
+    <ul>
+        <li>结构性伪类选择符 E:only-child</li>
+        <li>结构性伪类选择符 E:only-child</li>
+        <li>结构性伪类选择符 E:only-child</li>
+    </ul>
+
+    <input type="text" name="username">
+    <input type="text">
+    <input type="password">
+
+    <div id="div1">
+        阿斯顿发斯蒂芬撒地方啊是的发生的发生打分阿斯顿发斯蒂芬
+    </div>
+
+    <form method="post" action="#">
+        <fieldset>
+            <legend>选中下面的项试试</legend>
+            <ul>
+                <li><label><input type="radio" name="colour-group" value="0" /><span>蓝色</span></label></li>
+                <li><label><input type="radio" name="colour-group" value="1" /><span>红色</span></label></li>
+                <li><label><input type="radio" name="colour-group" value="2" /><span>黑色</span></label></li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>选中下面的项试试</legend>
+            <ul>
+                <li><label><input type="checkbox" name="colour-group2" value="0" /><span>蓝色</span></label></li>
+                <li><label><input type="checkbox" name="colour-group2" value="1" /><span>红色</span></label></li>
+                <li><label><input type="checkbox" name="colour-group2" value="2" /><span>黑色</span></label></li>
+            </ul>
+        </fieldset>
+    </form>
+
+</body>
+</html>
