@@ -1,5 +1,8 @@
 /* index.html 的样式 */
 
+body{
+    height: 3000px;
+}
 
 /* header 开始 */
 #header{
@@ -142,6 +145,7 @@
     background: #fff;
     box-shadow: 0 0 5px #aaa;
     display: none;
+    z-index: 1;
 }
 
 #quick-menu .qr-code::after{
@@ -298,5 +302,122 @@
 
 
 /* main-nav 结束 */
+
+
+/* side-bar 开始 */
+#side-bar{
+    width: 35px;
+    background: #ccc;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#side-bar .icon-gouwuchekong{
+    margin-top: 100px;
+    display: block;
+}
+
+#side-bar .side-bar-tab{
+    position: relative;
+}
+
+#side-bar .vip{
+    width: 90px;
+    height: 35px;
+    background-color: #494949;
+    color: #fff;
+    position: absolute;
+    /*left: -90px;*/
+    left: -200px;
+    top: 0;
+    text-align: center;
+    line-height: 35px;
+    font-size: 12px;
+    opacity: 0;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+    /*display: none;*/
+}
+
+#side-bar .vip::after{
+    content: '';
+    border-style: solid;
+    border-width: 4px;
+    border-color: transparent transparent transparent #494949;
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: -8px;
+    top: 14px;
+}
+
+#side-bar .side-bar-tab:hover .vip{
+    opacity: 1;
+    left: -90px;
+}
+
+#brand-list .brand{
+    width: 122px;
+    height: 108px;
+    border: 1px solid #ccc;
+    position: relative;
+    cursor: pointer;
+}
+
+#brand-list .brand img{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -50px;
+}
+
+#brand-list .brand:hover .brand-mask{
+    opacity: 1;
+}
+
+#brand-list .brand-mask{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -ms-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+#brand-list .coupon{
+    color: #fff;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#brand-list .enter{
+    width: 63px;
+    height: 18px;
+    background-color: #FF0036;
+    color: #fff;
+
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    font-size: 12px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+/* side-bar 结束 */
 
 
