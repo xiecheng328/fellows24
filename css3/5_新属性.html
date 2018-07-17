@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #h1{
+            text-shadow: 5px 5px 5px rgba(255, 0, 0, .5);
+        }
+
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            box-shadow: 10px 10px 10px 10px rgb(100,121,111);
+        }
+
+        #h2{
+            width: 200px;
+            border: 1px solid;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #h3{
+            width: 200px;
+            border: 1px solid;
+            word-wrap: break-word;
+
+            font-family: 'Serendity Script';
+        }
+
+        @font-face {
+            font-family: 'Serendity Script';
+            src: url('Serendipity Script/Serendity Script.eot'); /* IE9+ */
+            src: url('Serendipity Script/Serendity Script.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('Serendipity Script/Serendity Script.woff') format('woff'), /* chrome、firefox */
+            url('Serendipity Script/Serendity Script.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('Serendipity Script/Serendity Script.svg#fontname') format('svg'); /* iOS 4.1- */
+        }
+
+        body{
+            height: 2000px;
+        }
+        #progress{
+            width: 800px;
+            height: 30px;
+            background: #ccc;
+            border-radius: 5px;
+            /*overflow: hidden;*/
+        }
+        .html{
+            width: 50%;
+            height: 100%;
+            background: #222222;
+            border-radius: 5px 0 0 5px;
+        }
+
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #cccccc;
+            border-image: url(border-img.png) 27 round;
+            border-width: 27px;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1">唯创网讯</h1>
+
+    <div id="div1"></div>
+
+    <h1 id="h2">阿斯顿发电风扇阿斯顿发顺丰阿萨法</h1>
+
+    <h1 id="h3">asdfasdfsafasfasdfsadfsafas</h1>
+
+    <h3>进度条</h3>
+    <div id="progress">
+        <div class="html"></div>
+    </div>
+
+    <div id="div2"></div>
+</body>
+</html>

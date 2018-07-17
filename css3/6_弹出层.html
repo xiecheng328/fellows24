@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #mask {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 0, 0, .5);
+
+            /*opacity: .5;*/
+
+        }
+
+        #content {
+            width: 400px;
+            height: 300px;
+            border: 1px solid;
+            margin: 200px auto;
+            background: #222222;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<button>打开</button>
+<h1>这是个标题</h1>
+<div id="mask">
+    <div id="content">
+        这是个弹出层
+    </div>
+</div>
+</body>
+</html>
