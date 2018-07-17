@@ -44,7 +44,7 @@
             background: #ff0000;
         }*/
 
-        #ul1 li:first-of-type{
+       /* #ul1 li:first-of-type{
             background: #ff0000;
         }
 
@@ -57,64 +57,179 @@
         }
         input:checked + span::after {
             content: " 我被选中了";
+        }*/
+
+        /*input[type="text"][name="username"]{
+            background: #ff0000;
+        }
+
+        input[type="text"][name="username"]:focus{
+            background: #0f0;
+        }*/
+
+        /*#ul1 li:nth-child(even) { !* 偶数 *!
+            background: #ff0000;
+        }
+
+        #ul1 li:nth-child(odd) { !* 奇数 *!
+            background: #0f0;
+        }
+        td:empty{
+            background: #ff0000;
+        }*/
+
+        /*input:enabled{
+            background: #ff0000;
+        }
+
+        #div4::first-letter{
+            font-size: 80px;
+        }
+
+        #div5:first-letter{
+            font-size: 80px;
+        }
+
+        #div4::selection{
+            background: orange;
+        }*/
+
+        input::-webkit-input-placeholder {
+            color: #f00;
+        }
+        input::-moz-placeholder {
+            color: #f00;
+        }
+
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        body{
+            height: 2000px;
+        }
+        #div6{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+
+            border-radius: 50%;
+        }
+
+        .div7::after{
+            content: 'div7';
+        }
+
+        .div7::before{
+            content: 'div777';
+        }
+
+        .div8::after{
+            content: 'div8';
+        }
+
+        .div8::before{
+            content: 'div888';
+        }
+
+        #menu li a::after{
+            content: attr(href);
         }
     </style>
 </head>
 <body>
-    <div id="div2">
-        <div>div</div>
-        <h1>hhhh</h1>
-        <p>ppp</p>
-    </div>
+<div id="div2">
+    <div>div</div>
+    <h1>hhhh</h1>
+    <p>ppp</p>
+</div>
 
-    <div id="div3">
-        <p>pppp</p>
-        <h1>h1h1h1</h1>
-    </div>
+<div id="div3">
+    <p>pppp</p>
+    <h1>h1h1h1</h1>
+</div>
 
-    <ul id="ul1">
-        <li>001</li>
-        <li class="aa">002</li>
-        <li>003</li>
-        <li class="aa">004</li>
-        <li>005</li>
-    </ul>
-    <ul>
-        <li>结构性伪类选择符 E:only-child</li>
-    </ul>
-    <h1>有多个子元素</h1>
-    <ul>
-        <li>结构性伪类选择符 E:only-child</li>
-        <li>结构性伪类选择符 E:only-child</li>
-        <li>结构性伪类选择符 E:only-child</li>
-    </ul>
+<ul id="ul1">
+    <li>001</li>
+    <li class="aa">002</li>
+    <li>003</li>
+    <li class="aa">004</li>
+    <li>005</li>
+</ul>
+<ul>
+    <li>结构性伪类选择符 E:only-child</li>
+</ul>
+<h1>有多个子元素</h1>
+<ul>
+    <li>结构性伪类选择符 E:only-child</li>
+    <li>结构性伪类选择符 E:only-child</li>
+    <li>结构性伪类选择符 E:only-child</li>
+</ul>
 
-    <input type="text" name="username">
-    <input type="text">
-    <input type="password">
+<input type="text" name="username" placeholder="请输入用户名">
+<input type="text">
+<input type="password">
 
-    <div id="div1">
-        阿斯顿发斯蒂芬撒地方啊是的发生的发生打分阿斯顿发斯蒂芬
-    </div>
+<div id="div1">
+    阿斯顿发斯蒂芬撒地方啊是的发生的发生打分阿斯顿发斯蒂芬
+</div>
 
-    <form method="post" action="#">
-        <fieldset>
-            <legend>选中下面的项试试</legend>
-            <ul>
-                <li><label><input type="radio" name="colour-group" value="0" /><span>蓝色</span></label></li>
-                <li><label><input type="radio" name="colour-group" value="1" /><span>红色</span></label></li>
-                <li><label><input type="radio" name="colour-group" value="2" /><span>黑色</span></label></li>
-            </ul>
-        </fieldset>
-        <fieldset>
-            <legend>选中下面的项试试</legend>
-            <ul>
-                <li><label><input type="checkbox" name="colour-group2" value="0" /><span>蓝色</span></label></li>
-                <li><label><input type="checkbox" name="colour-group2" value="1" /><span>红色</span></label></li>
-                <li><label><input type="checkbox" name="colour-group2" value="2" /><span>黑色</span></label></li>
-            </ul>
-        </fieldset>
-    </form>
+<form method="post" action="#">
+    <fieldset>
+        <legend>选中下面的项试试</legend>
+        <ul>
+            <li><label><input type="radio" name="colour-group" value="0"/><span>蓝色</span></label></li>
+            <li><label><input type="radio" name="colour-group" value="1"/><span>红色</span></label></li>
+            <li><label><input type="radio" name="colour-group" value="2"/><span>黑色</span></label></li>
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend>选中下面的项试试</legend>
+        <ul>
+            <li><label><input type="checkbox" name="colour-group2" value="0"/><span>蓝色</span></label></li>
+            <li><label><input type="checkbox" name="colour-group2" value="1"/><span>红色</span></label></li>
+            <li><label><input type="checkbox" name="colour-group2" value="2"/><span>黑色</span></label></li>
+        </ul>
+    </fieldset>
+</form>
 
+<table border="1">
+    <tr>
+        <td>11</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>22</td>
+    </tr>
+</table>
+
+    <div id="div4">唯创网讯</div>
+    <div id="div5">WCWX</div>
+
+    <div id="div6"></div>
+
+    <div class="div7 div8">div</div>
+
+
+<ul id="menu">
+    <li><a href="http://www.baidu.com">百度</a></li>
+    <li><a href="http://www.taobao.com">淘宝</a></li>
+    <li><a href="http://www.jd.com">京东</a></li>
+</ul>
 </body>
 </html>
