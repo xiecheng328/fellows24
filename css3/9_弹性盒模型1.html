@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+
+        .parent{
+            display: -webkit-box;
+            /*-webkit-box-orient: vertical;*/
+            /*-webkit-box-direction: reverse;*/
+            -webkit-box-align: center;
+        }
+
+        .box{
+
+        }
+
+        .box1{
+            background: #ff0000;
+            -webkit-box-flex: 1;
+            height: 400px;
+            -webkit-box-ordinal-group: 1;
+        }
+        .box2{
+            background: #00ff00;
+            -webkit-box-flex: 2;
+            margin: 0 30px;
+            height: 300px;
+            -webkit-box-ordinal-group: 3;
+
+        }
+        .box3{
+            background: #ffff00;
+            -webkit-box-flex: 1;
+            height: 200px;
+            -webkit-box-ordinal-group: 2;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+    </div>
+
+</body>
+</html>
