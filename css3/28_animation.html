@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+
+            animation: move 3s linear forwards 1s infinite reverse;
+        }
+
+        @keyframes move {
+            from{
+
+            }
+
+            20%{
+                transform: translateX(100px);
+            }
+            40%{
+                transform: translateX(200px);
+            }
+
+            60%{
+                transform: translateX(300px);
+            }
+            80%{
+                transform: translateX(400px);
+            }
+
+            to{
+                transform: translateX(500px);
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

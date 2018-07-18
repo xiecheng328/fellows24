@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            /*transition: all 1s linear 1s;*/
+
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: linear;
+            transition-delay: 1s;
+        }
+
+        #div1:hover{
+            background: #00ff00;
+            transform: translate(300px, 300px);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>
