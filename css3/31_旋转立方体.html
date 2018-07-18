@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #000000;
+            perspective: 1000px;
+            perspective-origin: 50% 50%;
+        }
+        .container{
+            position: relative;
+            margin: 200px auto;
+            width: 200px;
+            height: 200px;
+            /*background: #ff0000;*/
+            transform-style: preserve-3d;
+            animation: rotate 3s linear infinite;
+
+        }
+
+        @keyframes rotate {
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+
+        .cube{
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            opacity: .6;
+            font-size: 80px;
+            text-align: center;
+            line-height: 200px;
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .one{
+            transform: rotateY(-90deg) translateZ(100px);
+            /*transform: translateX(-100px) rotateY(-80deg) ;*/
+        }
+
+        .two{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .three{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .four{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        .five{
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .six{
+            transform: translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cube one">1</div>
+        <div class="cube two">2</div>
+        <div class="cube three">3</div>
+        <div class="cube four">4</div>
+        <div class="cube five">5</div>
+        <div class="cube six">6</div>
+    </div>
+
+</body>
+</html>
