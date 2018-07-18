@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .elem{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #f00;
+            float: left;
+            position: relative;
+        }
+
+        .elem1{
+        }
+
+        .elem2{
+            transform: translateX(-1px);
+        }
+
+        .elem3{
+            clear: both;
+            transform: translateY(-1px);
+        }
+
+        .elem4{
+            transform: translate(-1px, -1px);
+        }
+
+        .elem:hover{
+            border-color: #00ff00;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="elem elem1"></div>
+    <div class="elem elem2"></div>
+    <div class="elem elem3"></div>
+    <div class="elem elem4"></div>
+
+</body>
+</html>

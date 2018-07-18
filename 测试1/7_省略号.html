@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            border: 1px solid;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+
+        #div2{
+            width: 200px;
+            border: 1px solid;
+            margin-top: 100px;
+
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="div1" title="阿萨德法师法师发">
+        阿斯顿发顺丰阿斯顿发斯蒂芬阿双方大师傅
+    </div>
+
+    <div id="div2">
+        阿斯顿发顺丰阿斯顿发斯蒂芬阿双方大师傅阿斯顿发顺丰阿斯顿发斯蒂芬阿双方大师傅
+    </div>
+</body>
+</html>
