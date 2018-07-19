@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // var arr = [5, 'xxx', true, undefined, 10, [1,2,3]];
+    /*console.log(arr[0]);
+    console.log(arr[2]);*/
+    /*for(var i=0; i<arr.length; i++){
+        console.log(arr[i]);
+    }*/
+
+    /*console.log(arr);
+
+    var arr2 = new Array([2]);
+    console.log(arr2);*/
+
+    /*var arr = [1, 2, 3];
+    console.log(arr);
+    console.log(arr.length);
+
+    var len = arr.push('a');
+    console.log(arr);
+    console.log(len);
+
+    var res = arr.pop();
+    console.log(arr);
+    console.log(res);*/
+
+
+    // 键值对  key-value
+    var student = {
+        name: 'zhangsan',
+        age: 18,
+        school: '黑大',
+        coding: function(){
+            console.log('学习js');
+        }
+    };
+    console.log(student['school']);
+    // student.coding();
+
+    for(var p in student){
+        console.log(p + '---' + student[p]);
+    }
+
+    var obj1 = new Object();
+    obj1.name = 'zhangsan';
+    obj1.age = 20;
+    obj1.eat = function(){
+        console.log('eating');
+    };
+
+
+</script>
+</body>
+</html>
