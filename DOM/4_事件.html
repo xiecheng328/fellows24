@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        #div1.bg{
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">div</div>
+
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        oDiv1.onclick = function(){
+            // oDiv1.style.background = '#0f0';
+            oDiv1.className = 'bg';
+        };
+
+
+
+    </script>
+</body>
+</html>

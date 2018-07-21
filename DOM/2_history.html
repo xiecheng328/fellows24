@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #back{
+
+        }
+    </style>
+</head>
+<body>
+    <h1>这是一个页面</h1>
+    <button id="back">返回</button>
+
+    <script>
+        // 事件
+        var oBtn = document.getElementById('back');
+
+        // console.log(oBtn);
+        oBtn.onclick = function(){
+            // console.log(Math.random());
+            // history.back();
+            history.go(-1);
+        };
+
+
+    </script>
+</body>
+</html>

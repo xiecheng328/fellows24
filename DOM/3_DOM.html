@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            background: #ff0000;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="div1">唯创</div>
+    <ul id="menu">
+        <li>菜单1</li>
+        <li>菜单2</li>
+        <li>菜单3</li>
+        <li>菜单4</li>
+    </ul>
+    <ul id="menu2">
+        <li>菜单1</li>
+        <li>菜单2</li>
+        <li>菜单3</li>
+        <li>菜单4</li>
+    </ul>
+
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        console.log(oDiv1);
+
+        var oMenu = document.getElementById('menu');
+
+        // 返回 HTMLCollection  类数组
+        var aLi = oMenu.getElementsByTagName('li');
+        console.log(aLi);
+
+
+
+    </script>
+</body>
+</html>
