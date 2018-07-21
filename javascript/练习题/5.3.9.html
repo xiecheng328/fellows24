@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * 利用全局变量和函数，设计模拟幸运数字机游戏。
+    * 设幸运数字为8，每次由计算机随机产生3个1-9之间(包括1和9）
+    * 的随机数，当这3个随机数中有一个数字为8时，就算赢了一次，
+    * 要求利用函数计算获胜率。
+    *
+    *
+    * 1 ~ 9
+    *   Math.ceil(Math.random() * ( 9 - 1)) + 1
+    *
+    *
+    * */
+
+    function getRangeRandom(low, high) {
+        return Math.ceil(Math.random() * (high - low)) + low;
+    }
+
+    var total = 100000;
+    var win = 0;
+    for (var i = 0; i < total; i++) {
+        for (var j = 0; j < 3; j++) {
+            // debugger;
+            if (getRangeRandom(1, 9) == 8) {
+                win++;
+                break;
+            }
+        }
+    }
+    console.log(win / total);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getPI(n) {
+        var pi = 0;
+        for(var i=1; i<=n; i++){
+            pi += 4 * Math.pow(-1, i - 1) / (2 * i - 1);
+        }
+        return pi;
+    }
+
+    var arr = [100, 500, 1000, 10000];
+    for (var i = 0, len = arr.length; i < len; i++) {
+        console.log(getPI(arr[i]));
+    }
+
+
+</script>
+</body>
+</html>
