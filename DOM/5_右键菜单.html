@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #menu{
+            border: 1px solid;
+            width: 120px;
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+        }
+        #menu li{
+            width: 120px;
+            height: 30px;
+            list-style: none;
+            border-bottom: 1px dashed #ccc;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        #menu li:last-child{
+            border-bottom: none;
+        }
+        #menu li:hover{
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>菜单1</li>
+        <li>菜单2</li>
+        <li>菜单3</li>
+        <li>菜单4</li>
+        <li>菜单5</li>
+    </ul>
+
+    <h1>唯创网讯</h1>
+
+    <script>
+        var oMenu = document.getElementById('menu');
+        var aLi = oMenu.getElementsByTagName('li');
+
+        document.oncontextmenu = function(ev){ // ev 事件对象
+            ev = ev || window.event;// 兼容性问题
+            oMenu.style.display = 'block';
+            oMenu.style.left = ev.clientX + 'px';
+            oMenu.style.top = ev.clientY + 'px';
+            return false;// 阻止默认行为
+        };
+
+        document.onclick = function(){
+            oMenu.style.display = 'none';
+        };
+
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                alert(this.innerHTML);// 对于当前对象的引用
+            };
+        }
+
+
+    </script>
+</body>
+</html>
