@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="logo.png" alt="" id="logo">
+
+
+<script src="xx.js"></script>
+<script>
+    /*window.onload = function(){
+        var oLogo = document.getElementById('logo');
+        console.log(oLogo.offsetWidth);
+    };*/
+
+    var oLogo = document.getElementById('logo');
+    oLogo.onload = function () {
+        console.log(oLogo.offsetWidth);
+    };
+
+    // 懒加载
+    // 预加载
+
+</script>
+</body>
+</html>
