@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #container {
+            position: relative;
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+        }
+
+        #imgs img {
+            display: none;
+        }
+
+        #imgs .selected {
+            display: block;
+        }
+
+        #nav {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        #nav li, #arrows span {
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            color: #fff;
+            float: left;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+
+        #nav .nav-selected {
+            background-color: orange;
+        }
+
+        #arrows {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="imgs">
+        <img src="img/1.jpg" alt="" class="selected">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+    </div>
+    <ul id="nav">
+        <li class="nav-selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="arrows">
+        <span id="prev">&lt;</span>
+        <span id="next">&gt;</span>
+    </div>
+</div>
+
+<script>
+    var oImgs = document.getElementById('imgs');
+    var aImg = oImgs.getElementsByTagName('img');
+    var oNav = document.getElementById('nav');
+    var aLi = oNav.getElementsByTagName('li');
+    var oPrev = document.getElementById('prev');
+    var oNext = document.getElementById('next');
+    var oContainer = document.getElementById('container');
+    var iNowIndex = 0; //  全局变量，保存的是当前显示图片的索引
+    var timer;
+
+    for (var i = 0; i < aLi.length; i++) {
+        aLi[i].index = i;
+        aLi[i].onmouseover = function () {
+            iNowIndex = this.index;
+            changeImg();
+        };
+    }
+
+    oPrev.onclick = oNext.onclick = function () {
+        if (this === oPrev) {
+            iNowIndex--;
+            if (iNowIndex == -1) {
+                iNowIndex = aLi.length - 1;
+            }
+        } else {
+            iNowIndex++;
+            if (iNowIndex == aLi.length) {
+                iNowIndex = 0;
+            }
+        }
+        changeImg();
+    };
+
+    oPrev.onselectstart = oNext.onselectstart = function(){
+        return false;
+    };
+
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    };
+    oContainer.onmouseout = function(){
+        play();
+    };
+
+    play();
+
+    // 切换
+    function changeImg() {
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].className = '';
+            aImg[i].className = '';
+        }
+        aLi[iNowIndex].className = 'nav-selected';
+        aImg[iNowIndex].className = 'selected';
+    }
+
+    // 播放
+    function play(){
+        timer = setInterval(function(){
+            oNext.onclick();
+        }, 1000);
+    }
+
+
+
+</script>
+</body>
+</html>
