@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #container {
+            position: relative;
+        }
+
+        #imgs {
+            position: relative;
+            height: 500px;
+        }
+
+        #imgs div {
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: all 1s ease;
+        }
+
+        #imgs .actived{
+            opacity: 1;
+            z-index: 1;
+        }
+
+        #imgs .banner1 {
+            background-color: #e8e8e8;
+        }
+
+        #imgs .banner2 {
+            background-color: #1d3cbc;
+        }
+
+        #imgs .banner3 {
+            background-color: #dc2d32;
+        }
+
+        #nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 30px;
+            z-index: 999;
+        }
+
+        #nav li {
+            width: 25px;
+            height: 5px;
+            background-color: #000;
+            opacity: .3;
+            filter: alpha(opacity=30);
+            float: left;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        #nav .selected {
+            background-color: #fff;
+            opacity: .6;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="imgs">
+        <div class="banner1 actived">
+            <img src="https://img.alicdn.com/simba/img/TB1xIQMvH5YBuNjSspoSuveNFXa.jpg" alt="">
+        </div>
+        <div class="banner2">
+            <img src="http://img.alicdn.com/imgextra/i1/114/TB2wYu7c8cXBuNjt_XoXXXIwFXa_!!114-0-luban.jpg_q100.jpg_.webp"
+                 alt="">
+        </div>
+        <div class="banner3">
+            <img src="http://img.alicdn.com/tps/i4/TB17ITUFuuSBuNjSsplSuve8pXa.jpg" alt="">
+        </div>
+    </div>
+    <ul id="nav">
+        <li class="selected"></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+</div>
+
+<script>
+    var oNav = document.getElementById('nav');
+    var aLi = oNav.getElementsByTagName('li');
+    var oImgs = document.getElementById('imgs');
+    var aDiv = oImgs.getElementsByTagName('div');
+
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].index = i;
+        aLi[i].onmouseover = function(){
+            for(var j=0; j<aLi.length; j++){
+                aLi[j].className = '';
+                aDiv[j].className = 'banner' + (j + 1);
+            }
+            this.className = 'selected';
+            aDiv[this.index].className += ' actived ';
+        };
+    }
+
+</script>
+</body>
+</html>

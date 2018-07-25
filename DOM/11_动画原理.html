@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            /*transition: transform 3s ease;*/
+
+            position: relative;
+            /*left: 100px;*/
+        }
+
+        .move{
+            transform: translateX(500px);
+        }
+    </style>
+</head>
+<body>
+<button id="move">move</button>
+<div id="box"></div>
+
+<script>
+    var oMove = document.getElementById('move');
+    var oBox = document.getElementById('box');
+    oMove.onclick = function(){
+        // oBox.className = 'move';
+
+
+        // console.log(oBox.offsetLeft);
+        var timer = setInterval(function(){
+            if(oBox.offsetLeft >= 500){
+                clearInterval(timer);
+            }
+            oBox.style.left = oBox.offsetLeft + 20 + 'px';
+        }, 30);
+    };
+
+
+</script>
+</body>
+</html>
