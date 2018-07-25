@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+        }
+
+        #div2{
+            width: 300px;
+            height: 300px;
+            background: #00ff00;
+        }
+
+        #div3{
+            width: 200px;
+            height: 200px;
+            background: #ffff00;
+        }
+    </style>
+</head>
+<body id="body">
+    <div id="div1">
+        <div id="div2">
+            <div id="div3"></div>
+        </div>
+    </div>
+
+<script>
+    var oDiv1 = document.getElementById('div1');
+    var oDiv2 = document.getElementById('div2');
+    var oDiv3 = document.getElementById('div3');
+    var oBody = document.getElementById('body');
+    var oHtml = document.getElementById('html');
+
+    /*oDiv1.onclick = function(){
+        console.log('div1');
+    };*/
+
+    /*oDiv2.onclick = function(){
+        console.log('div2');
+    };
+    oDiv3.onclick = function(){
+        console.log('div3');
+    };
+    oBody.onclick = function(){
+        console.log('body');
+    };
+    oHtml.onclick = function(){
+        console.log('html');
+    };*/
+
+    /*oDiv1.addEventListener('click', function(e){
+        console.log('div1');
+        e.stopPropagation();
+    }, true);
+    oDiv2.addEventListener('click', function(e){
+        console.log('div2');
+        e.stopPropagation();
+    }, true);
+    oDiv3.addEventListener('click', function(e){
+        console.log('div3');
+        e.stopPropagation();
+    }, true);*/
+
+    oDiv1.attachEvent('onclick', function(){
+        alert('div1');
+        window.event.cancelBubble = true;
+    });
+    oDiv2.attachEvent('onclick', function(){
+        alert('div2');
+        window.event.cancelBubble = true;
+    });
+    oDiv3.attachEvent('onclick', function(){
+        alert('div3');
+        window.event.cancelBubble = true;
+    });
+    /*oDiv2.attachEvent('onclick', function(){
+        alert('div2');
+    });
+    oDiv3.attachEvent('onclick', function(){
+        alert('div3');
+    });*/
+
+    /*oDiv1.addEventListener('click', function(){
+        console.log(this);
+    }, false)*/
+    /*oDiv1.attachEvent('onclick', function(){
+        alert(this);
+    });*/
+</script>
+</body>
+</html>

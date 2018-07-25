@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="add">增加</button>
+<ul id="ul1">
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+
+</ul>
+
+<script>
+
+    var oUl1 = document.getElementById('ul1');
+    var oAdd = document.getElementById('add');
+    var aLi = oUl1.getElementsByTagName('li');
+    /* for(var i=0; i<aLi.length; i++){
+         aLi[i].onclick = function(){
+             console.log(this.innerHTML);
+         };
+     }*/
+
+    oUl1.onclick = function (e) {
+        console.log(e.target.innerHTML);
+    };
+
+    oAdd.onclick = function () {
+        var li = document.createElement('li');
+        li.innerHTML = Math.random();
+        oUl1.appendChild(li);
+    };
+</script>
+</body>
+</html>

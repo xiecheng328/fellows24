@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul1">
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+    <li>006</li>
+    <li>007</li>
+    <li>008</li>
+    <li>009</li>
+    <li>010</li>
+</ul>
+
+<script>
+    var oUl1 = document.getElementById('ul1');
+    /*var aLi = oUl1.getElementsByTagName('li');
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].onclick = function(){
+            console.log(this.innerHTML);
+        };
+    }*/
+
+    oUl1.onclick = function(e){
+        console.log(e.target.innerHTML);
+    };
+
+
+//    事件源：
+//      标准浏览器： e.target
+//      早期IE:  window.event.srcElement
+
+
+
+</script>
+
+
+</body>
+</html>

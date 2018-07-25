@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+
+        #div2{
+            width: 300px;
+            height: 300px;
+            background: #00ff00;
+            margin-left: 20px;
+        }
+
+        #div3{
+            width: 400px;
+            height: 400px;
+            background: #ffff00;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div3">
+        <div id="div2">
+            <div id="div1"></div>
+        </div>
+    </div>
+
+
+    <script>
+        var oDiv1 = document.getElementById('div1');
+       /* console.log(oDiv1.offsetWidth);
+        console.log(oDiv1.offsetHeight);*/
+       /*console.log(oDiv1.offsetLeft);
+       console.log(oDiv1.offsetTop);
+       console.log(oDiv1.offsetParent);*/
+
+
+    </script>
+</body>
+</html>
