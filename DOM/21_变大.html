@@ -5,7 +5,7 @@
     <title>Title</title>
     <style>
         .div1{
-            width: 200px;
+            width: 100px;
             height: 30px;
             background: #ff0000;
             margin-top: 40px;
@@ -18,27 +18,31 @@
 <div class="div1"></div>
 
     <script>
-        var oDiv1 = document.querySelectorAll('.div1');
-        var timer1, timer2;
-        oDiv1.addEventListener('mouseover', function(){
-            clearInterval(timer2);
-            timer1 = setInterval(function(){
-                oDiv1.style.width = oDiv1.offsetWidth + 10 + 'px';
-            }, 50);
-        });
-
-        oDiv1.addEventListener('mouseout', function(){
-            clearInterval(timer1);
-            timer2 = setInterval(function(){
-                oDiv1.style.width = oDiv1.offsetWidth - 10 + 'px';
-            }, 50);
-        });
-
-
-        function foo(elem){
-            elem.timer = setInterval(function(){
-
-            }, 50);
+        var aDiv = document.querySelectorAll('.div1');
+        for(var i=0; i<aDiv.length; i++){
+            aDiv[i].timer = null;
+            aDiv[i].onmouseover = function(){
+                clearInterval(this.timer);
+                var that = this;
+                this.timer = setInterval(function(){
+                    if(that.offsetWidth >= 300){
+                        clearInterval(that.timer);
+                    }else{
+                        that.style.width = that.offsetWidth + 10 + 'px';
+                    }
+                }, 30);
+            };
+            aDiv[i].onmouseout = function(){
+                clearInterval(this.timer);
+                var that = this;
+                this.timer = setInterval(function(){
+                    if(that.offsetWidth <= 100){
+                        clearInterval(that.timer);
+                    }else{
+                        that.style.width = that.offsetWidth - 10 + 'px';
+                    }
+                }, 30);
+            };
         }
 
 
