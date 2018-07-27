@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*var a = 5;
+    var b = a;
+    a = 6;
+    console.log(b)*/;
+
+    var obj1 = {
+        name: 'zhangsan',
+        age: 18,
+        dad: {
+            name: 'zhanger',
+            age: 40,
+            dad: {
+                name: 'zhangyi',
+                age: 70
+            }
+        }
+    };
+    // var obj2 = obj1;// 浅拷贝
+    // obj1.name = 'lisi';
+    // console.log(obj2.name);
+
+    // var obj3 = {}; // new Object();
+    // obj3.name = obj1.name;
+    // obj3.age = obj1.age;
+    //
+    // obj1.name = 'lisi';
+    // console.log(obj3);
+
+    var newObj = clone(obj1);
+    obj1.dad.dad.name = 'zhangyy';
+    console.log(newObj);
+
+    // 深拷贝
+    function clone(obj){
+        var newObj = {};
+        for(var p in obj){
+            if(typeof obj[p] === 'object'){
+                newObj[p] = clone(obj[p]);
+            }else{
+                newObj[p] = obj[p];
+            }
+        }
+        return newObj;
+    }
+
+</script>
+</body>
+</html>

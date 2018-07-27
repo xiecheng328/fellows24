@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #menu{
+            border-bottom: 1px solid;
+        }
+        
+        #menu .item{
+            width: 120px;
+            height: 30px;
+            background-color: #ccc;
+            float: left;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #container{
+            width: 400px;
+            height: 300px;
+            border: 1px solid;
+            margin: 100px auto;
+        }
+
+        #menu .menu-selected{
+            background-color: #000;
+            color: #fff;
+        }
+
+        #content div{
+            display: none;
+        }
+
+        #content .content-selected{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="menu" class="clearfix">
+        <li class="item menu-selected">html</li>
+        <li class="item">css</li>
+        <li class="item">javascript</li>
+    </ul>
+    <div id="content">
+        <div class="content-selected">001</div>
+        <div>002</div>
+        <div>003</div>
+    </div>
+</div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+$(function(){
+    $('#menu .item').on('click', function(){
+        $(this).addClass('menu-selected').siblings().removeClass('menu-selected');
+        $('#content div').eq($(this).index()).addClass('content-selected').siblings().removeClass('content-selected');
+    });
+
+
+
+
+});
+
+</script>
+</body>
+</html>

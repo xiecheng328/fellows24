@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    js 基于面向对象
+    类
+    对象
+-->
+
+<script>
+    // 类
+    function People(name, age, school){// 构造函数
+        this.name = name;
+        this.age = age;
+        this.school = school;
+        // this.showName = function(){//new Function('alert(123)');
+        //     alert(123);
+        // };
+    }
+
+    // 原型
+    People.prototype.showName = function(){
+        alert('我的名字是:' + this.name);
+    };
+
+    People.prototype.showSchool = function(){
+        alert('我的学校是:' + this.school);
+    };
+
+    // 实例化对象
+    var p1 = new People('zhangsan', 18, '黑大');
+    var p2 = new People('lisi', 20, '理工');
+    console.log(p1);
+    console.log(p2);
+    // p1.showName();
+    // p2.showName();
+    // p1.showSchool();
+
+    // p1.showName();
+
+    // 原型链
+
+
+
+    // function fn(){
+    //     alert(123);
+    // }
+
+    var fn = new Function('alert(456)');
+
+    fn();
+
+
+
+    // Animal
+    // Dog
+    // var d = new Dog('xxx');
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            padding: 20px;
+            border: 10px solid;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">div123</div>
+<input type="text" value="张三" id="username">
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    /*var oDiv1 = document.getElementById('div1');
+    // oDiv1.id = 'xx';
+    oDiv1.className = 'aa';
+    // oDiv1.xx = 'yy';
+
+    oDiv1.setAttribute('xx', 'yy');
+    console.log(oDiv1.getAttribute('xx'));*/
+
+    $(function(){
+        // $('#div1').attr('xx', 'yy');
+        // console.log($('#div1').attr('xx'));
+
+        // $('#div1').prop('xx', 'yy');
+        // console.log($('#div1').prop('xx'));
+        //
+        // console.log($('#username').val());
+
+        $('#div1').on('click', function(){
+            // $(this).toggleClass('aa');
+
+            // $(this).css('background', '#f00');
+            $(this).css({
+                backgroundColor: '#f00',
+                color: '#0f0',
+                'font-size': 50
+            });
+
+           /* $(this).css('width', function(){
+                var w = 100 + 100;
+                return w;
+            });*/
+
+
+            // console.log($(this).css('color'));
+
+            // 链式操作
+            // $(this).css('background', '#f00').attr('aa', 'bb');
+        });
+
+        // console.log('width='+ $('#div1').width());
+        // console.log('innerWidth='+$('#div1').innerWidth());
+        // console.log('outerWidth='+$('#div1').outerWidth(true));
+
+        // console.log($('#div1').offset());
+        // console.log($('#div1').position());
+        // $('#div1').html('<h1>hhh</h1>');
+        $('#div1').text('<h1>hhh</h1>');
+        // $('#div1').text('bbb');
+
+        $('li').eq(2).css('background-color', 'red');
+        $('li:eq(2)').css('background-color', 'red');
+
+    });
+</script>
+</body>
+</html>

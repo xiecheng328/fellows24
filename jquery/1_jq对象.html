@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1">divdiv</div>
+
+<script src="jquery-1.12.4.js"></script>
+
+<script>
+    // jq对象
+    // $('#div1').css('background', 'red');
+
+    var $div1 = $('#div1');
+    var oDiv1 = document.getElementById('div1');
+
+    console.log($div1[0].innerHTML);
+    console.log(oDiv1.innerHTML);
+    $(oDiv1).css('background', 'red');
+
+    // jq对象 -> 原生对象  $obj.get(0)  $obj[0]
+    // 原生对象  ->  jq对象  $(obj)
+
+
+
+</script>
+</body>
+</html>
