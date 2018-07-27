@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="container">
+        <h1 id="h1">hh</h1>
+        <p>ppp</p>
+    </div>
+
+
+    <script>
+        var oContainer = document.getElementById('container');
+        console.log(oContainer.children);
+        // console.log(oContainer.childNodes.length);
+        /*var child = oContainer.childNodes;
+        for(var i=0; i<child.length; i++){
+            console.log(child[i].nodeType);
+        }*/
+        // console.log(oContainer.firstChild);
+        // console.log(oContainer.firstElementChild);
+
+        var oH1 = document.getElementById('h1');
+       // console.log(oH1.nextSibling);
+       // console.log(oH1.nextElementSibling);
+
+
+        console.log(next(oH1));
+        // 找到他的元素节点的兄弟
+        function next(elem){
+            do{
+                elem = elem.nextSibling;
+            }while (elem && elem.nodeType != 1 );
+            return elem;
+        }
+
+        // console.log(first(oContainer));
+
+        // 找到第一个元素节点孩子
+        function first(elem){
+            elem = elem.firstChild;
+            if(elem === null){
+                return null;
+            }
+            return elem.nodeType == 1 ? elem : next(elem);
+        }
+
+
+    </script>
+</body>
+</html>

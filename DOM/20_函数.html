@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <button id="start">开始</button>
+    <div id="box"></div>
+
+    <script src="wichung-1.0.js"></script>
+    <script>
+        var oStart = document.querySelector('#start');
+        var oBox = document.querySelector('#box');
+        oStart.addEventListener('click', function(){
+            animate(oBox, {
+                width: 500
+            }, function(){
+                animate(oBox, {
+                    height: 500
+                });
+            });
+        });
+
+        // aLi[i].index = i;
+
+    </script>
+</body>
+</html>
