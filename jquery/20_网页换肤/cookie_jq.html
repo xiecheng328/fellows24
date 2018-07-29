@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../jquery-1.12.4.js"></script>
+<script src="../jquery.cookie.js"></script>
+
+<script>
+    $(function(){
+        $.cookie('school', '黑大', {
+            expires: 20
+        });
+
+        console.log($.cookie('school'));
+
+
+
+
+    });
+
+
+</script>
+</body>
+</html>
