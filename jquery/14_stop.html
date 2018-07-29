@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>stop</title>
+    <style>
+        #box {
+            background: #f00;
+            height: 100px;
+            width: 100px;
+            position: relative;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p>
+        <input type='button' value='开始测试' id='start'>
+    </p>
+    <div id="button">
+        <input type="button" id="button1" value="stop()" />
+        <input type="button" id="button2" value="stop(true)" />
+        <input type="button" id="button3" value="stop(false,true)" />
+        <input type="button" id="button4" value="stop(true,true)" />
+    </div>
+    <div id="box">stop运动参数测试</div>
+
+    <script src='jquery-1.12.4.js'></script>
+    <script>
+        $(function () {
+            var $box = $("#box");
+            $("#start").on("click", function () {
+                $box.animate({
+                    height: 500
+                }, 5000);
+                $box.animate({
+                    width: 500
+                }, 5000);
+                $box.animate({
+                    height: 100
+                }, 5000);
+                $box.animate({
+                    width: 100
+                }, 5000);
+            });
+            // 点击不同的button执行不同的操作
+            $('#button1').click(function () {
+                //默认参数是false，不管写一个false还是两个false还是没写false效果一样
+                $box.stop();
+            });
+            $('#button2').click(function () {
+                //第二个参数默认false
+                $box.stop(true);
+            });
+            $('#button3').click(function () {
+                $box.stop(false, true);
+            });
+            $('#button4').click(function () {
+                $box.stop(true, true);
+            });
+        })
+    </script>
+</body>
+
+</html>

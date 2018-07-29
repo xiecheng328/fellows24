@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+
+    </style>
+</head>
+<body>
+<button id="remove">remove</button>
+<button id="add">add</button>
+<div id="div1"></div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+$(function(){
+    var $div1 = $('#div1');
+
+    $div1.on('click', function(){
+        alert(123);
+    });
+
+    $('#remove').on('click', function(){
+        $div1.remove();
+    });
+
+    $('#add').on('click', function(){
+        $('body').append($div1);
+    });
+
+
+
+});
+
+
+</script>
+</body>
+</html>

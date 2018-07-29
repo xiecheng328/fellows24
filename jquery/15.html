@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="content"></div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        var a = {
+            name: 'zs',
+            age: 18
+        };
+
+        var b = {
+            school: '黑大'
+        };
+
+        var c = {
+            age: 20
+        };
+
+        $.extend(a, b, c);
+        console.log(a);
+
+
+    });
+
+    dialog({
+        w: 200,
+        t: '注册',
+        content: 'regist.html'
+    });
+
+
+    // 默认 w=300 h=300 t=弹出层
+    function dialog(settings) {
+        var defaultSettings = {
+            w: 300,
+            h: 300,
+            t: '弹出层',
+            content: ''
+        };
+
+        $.extend(defaultSettings, settings);
+        console.log(defaultSettings);
+
+        $('#content').load(defaultSettings.content);
+    }
+
+
+</script>
+</body>
+</html>

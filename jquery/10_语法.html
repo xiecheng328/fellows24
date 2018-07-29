@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 id="h1">hh</h1>
+    <p id="p1">ppp</p>
+
+    <ul id="ul1">
+        <li>001</li>
+        <li class="aa">002</li>
+        <li>003
+            <ul>
+                <li>1</li>
+                <li class="aa">2</li>
+                <li>3</li>
+            </ul>
+        </li>
+        <li class="aa">004</li>
+    </ul>
+
+<script src="jquery-1.12.4.js"></script>
+
+<script>
+    $(function(){
+        // $('#h1').add('#p1').end().css('background', '#f00');
+
+
+        $('#ul1').find('.aa').css('background', '#f00');
+    });
+
+
+</script>
+</body>
+</html>
