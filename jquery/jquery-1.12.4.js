@@ -6981,7 +6981,7 @@ function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
 			// at this point, extra isn't content nor padding, so add border
 			if ( extra !== "padding" ) {
 				val += jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
-			}
+			}s
 		}
 	}
 
