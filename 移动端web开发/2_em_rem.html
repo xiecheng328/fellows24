@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #div1{
+            width: 20rem;
+            height: 20rem;
+            background: #ff0000;
+        }
+        #div2{
+            width: 10rem;
+            height: 10rem;
+            background: #00ff00;
+            padding: 1rem;
+        }
+    </style>
+
+</head>
+<!--
+em:相对于父元素的font-size的倍数
+rem:相对于html的font-size的倍数
+
+-->
+<body>
+    <div id="div1">
+        <div id="div2">123</div>
+    </div>
+
+    <script>
+        window.onresize = function(){
+            console.log(Math.random());
+            if(document.body.clientWidth < 500){
+                document.documentElement.style.fontSize = '12px';
+            }
+        };
+
+
+
+
+    </script>
+</body>
+</html>

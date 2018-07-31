@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #div1{
+            width: 100%;
+            padding-top: 100%;
+            background: #ff0000;
+        }
+
+        #div2{
+            width: 100%;
+            height: 100vw;
+            background: #00ff00;
+        }
+
+        #div3{
+            background: #ffff00;
+            overflow: hidden;
+        }
+
+        #div3::after{
+            content: '';
+            display: block;
+            margin-top: 100%;
+        }
+    </style>
+</head>
+<!--
+vw
+vh
+vmax
+vmin
+
+-->
+<body>
+ <div id="div1"></div>
+ <div id="div2"></div>
+ <div id="div3"></div>
+</body>
+</html>

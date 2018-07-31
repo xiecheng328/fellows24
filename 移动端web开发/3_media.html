@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 100%;
+            height: 600px;
+            /*background: url(01.jpg);*/
+        }
+
+        @media (orientation: landscape) {
+            #div1{
+                background: #ff0000;
+            }
+        }
+
+        @media (orientation: portrait) {
+            #div1{
+                background: #00ff00;
+            }
+        }
+        
+    </style>
+</head>
+<!--
+max-width:500px
+min-width:500px
+-webkit-device-pixel-ratio: 2
+orientation: portrait 竖屏
+orientation: landscape 横屏
+
+
+
+-->
+<body>
+    <div id="div1"></div>
+</body>
+</html>
