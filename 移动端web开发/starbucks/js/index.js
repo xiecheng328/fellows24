@@ -10,13 +10,12 @@ $(function(){
     });
 
     // 轮播图
-    var oSlide = document.getElementsByClassName('slide')[0];
-    var clientW = oSlide.clientWidth;
+    var clientW = document.body.clientWidth;
     $('.slide-container').css('width', function(){
         return 4 * clientW;
     });
     window.onresize = function(){
-        clientW = oSlide.clientWidth;
+        clientW = document.body.clientWidth;
         $('.slide-container img').css({
             width: clientW
         });
