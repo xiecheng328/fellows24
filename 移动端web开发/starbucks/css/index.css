@@ -1,21 +1,21 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-li{
+li {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-body{
+body {
     background: #cccccc;
 }
 
-.nav{
+.nav {
     position: fixed;
     width: 30%;
     top: 0;
@@ -24,106 +24,115 @@ body{
     background: #ffffff;
 }
 
-.logo img, .logo{
+.logo img, .logo {
     width: 36px;
     height: 36px;
 }
 
-.logo img{
+.logo img {
     vertical-align: middle;
 }
-.primary{
+
+.primary {
     margin-left: 20px;
 }
-.primary li{
+
+.primary li {
     float: left;
     margin-right: 5px;
 }
-.primary li a{
+
+.primary li a {
     color: #000;
 }
 
-.logo, .primary{
+.logo, .primary {
     float: left;
 }
 
-.nav-menu{
+.nav-menu {
     float: right;
 }
 
-.header{
+.header {
     height: 48px;
     padding: 24px;
     line-height: 48px;
 }
 
-.overlay{
+.overlay {
     opacity: 0;
     visibility: hidden;
 }
 
-.actived{
+.actived {
     opacity: 1;
     visibility: visible;
 }
 
-.nav-close{
+.nav-close {
     float: right;
 }
 
-.overlay .body{
+.overlay .body {
     transform: scale(1.2);
     transition: transform .1s ease;
 }
 
-.overlay.actived .body{
+.overlay.actived .body {
     transform: scale(1);
 }
 
-.content{
+.content {
     margin-left: 30%;
 }
-.slide{
+
+.slide {
     overflow: hidden;
 }
-.slide-container{
-    width: 2688px;
+
+.slide-container {
+    /*width: 2688px;*/
     transition: transform .8s ease;
 }
 
-.slide-container img{
+.slide-container .slide-item {
     float: left;
     width: 896px;
 }
 
+.slide-container .slide-item img {
+    width: 100%;
+}
 
-
-
-@media (max-width: 1024px){
-    .nav{
+@media (max-width: 1024px) {
+    .nav {
         right: 0;
         height: 182px;
         width: 100%;
     }
-    .content{
+
+    .content {
         margin-left: 0;
         margin-top: 182px;
     }
 
-    .slide{
+    .slide {
         width: 100%;
     }
-    .slide-container{
+
+    .slide-container {
         width: 400%;
     }
-    .slide-container img{
+
+    .slide-container .item {
         width: 25%;
     }
 
 }
 
 @media (max-width: 640px) {
-    .nav .header{
+    .nav .header {
         /*visibility: hidden;*/
         display: none;
     }
