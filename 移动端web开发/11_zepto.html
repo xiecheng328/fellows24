@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #div2 {
+            width: 400px;
+            height: 400px;
+            background: #00ff00;
+        }
+    </style>
+
+</head>
+<body>
+<!--<div id="div2"></div>-->
+<div id="div1"></div>
+
+<script src="zepto.js"></script>
+<script src="touch.js"></script>
+<!-- 解决tap的点透问题 -->
+<script src="fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+
+        // console.log($('#div1'));
+        /* $('#div1').on('tap', function(){
+             $(this).hide();
+             console.log('div1');
+         });
+
+         $('#div2').on('click', function(){
+             console.log('div2');
+         });*/
+
+        /*$('#div1').on('swipeLeft', function(){
+            console.log('left');
+        });
+
+         $('#div1').on('swipeRight', function(){
+             console.log('right');
+         });*/
+
+        $('#div1').on('touchstart', function () {
+            console.log('start');
+        });
+
+        $('#div1').on('touchend', function () {
+            console.log('end');
+        });
+
+        $('#div1').on('touchmove', function () {
+            console.log('move');
+        });
+
+        /*var type;
+        if (navigator.userAgent.indexOf('iphone') != -1) {
+            type = 'tap;'
+        } else {
+            type = 'click';
+        }
+*/
+        $('#div1').on('singleTap', function () {
+            console.log('singleTap');
+        });
+
+
+         $('#div1').on('click', function(){
+             console.log('click');
+         });
+
+        // touchstart touchend touchmove touchcancle
+    });
+
+
+</script>
+</body>
+</html>
