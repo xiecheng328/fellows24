@@ -11,7 +11,7 @@ $(function () {
 
     // 轮播图
     var $Slide = $('.slide');
-    var clientW = $Slide.width();
+    var clientW = $Slide.innerWidth();
     $('.slide-container').css('width', function () {
         return 4 * clientW;
     });
@@ -22,7 +22,7 @@ $(function () {
     window.onresize = function () {
         clearTimeout(t);
         t = setTimeout(function () {
-            clientW = $Slide.width();
+            clientW = $Slide.innerWidth();
             $('.slide-container').css('width', function () {
                 return 4 * clientW;
             });
