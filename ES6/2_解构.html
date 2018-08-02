@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let arr = [1, 2, 3];
+        // let a = arr[0];
+        // let b = arr[1];
+        // let c = arr[2];
+        // console.log(a, b, c);
+
+
+        // let [a, b, c] = [1, 2, 3];
+        // console.log(a, b, c);
+
+        // let [a, [d, b], c] = [1, [2, 4], 3];
+        // console.log(a, b, c, d);
+
+        // let [a, [d], c] = [1, [2, 4], 3];
+        // console.log(a, c, d);
+
+        // let [a, [b, c], d] = [1, [2], 3];
+        // console.log(a, b, c, d);
+
+
+        // let obj = {
+        //     name: 'lisi',
+        //     age: 18
+        // };
+
+        // // let name = obj.name;
+        // // let age = obj.age;
+
+        // console.log(name, age);
+
+
+        // let { age, name } = {
+        //     name: 'lisi',
+        //     age: 18
+        // };
+        // console.log(name, age);
+
+        /* let { age: age1, name: name1 } = {
+            name: 'lisi',
+            age: 18
+        };
+        console.log(name1, age1);
+        console.log(name, age); */
+
+        // let [a, b, c, d, e, f, g] = 'weichuang';
+        // for(let i=0; i<str.length; i++){
+        //     console.log(str[i]);
+        // }
+        // console.log(a, b, c, d, e, f, g);
+
+
+        // let [a, b, c=8] = [4, 5, 6];
+        // console.log(a, b, c);
+
+        /*  function foo(){
+             console.log(123);
+         }
+ 
+         let [a=foo()] = []; */
+
+        /* function foo([a, b, c]) {
+            console.log(a, b, c);
+        }
+
+        let arr = [4, 5, 6];
+        foo(arr); */
+
+
+        /* function foo({name, age, school='XX大学'}){
+
+        }
+
+        let obj = {
+            name: 'zs',
+            age: 20
+        };
+        foo(obj); */
+
+
+        /* function foo() {
+            let obj = {
+                name: 'zs',
+                age: 20
+            };
+            return obj;
+        }
+
+        let {name, age} = foo();
+        console.log(name, age); */
+
+        /* var a = 5;
+        var b = 6; */
+
+        /* let temp = a; // temp=5
+        a = b;//a = 6;
+        b = temp; //b = 5; */
+
+        /* a = a + b;//a=11
+        b = a - b;//b=5
+        a = a - b;//a=6;
+        console.log(a, b); */
+
+        // var [b, a] = [a, b];
+        // console.log(a, b);
+
+        /* var a = [b, b = a][0];
+        console.log(a, b); */
+
+        // json
+        let json = '{"a": "Hello", "b": "World"}';
+        /* let obj = JSON.parse(json);
+        console.log(obj);
+        let str = JSON.stringify(obj);
+        console.log(str); */
+
+        let { a, b } = JSON.parse(json);
+        console.log(a, b);
+
+
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- xml -->
+
+<!-- <userinfo>
+    <username>zhangsan</username>
+    <age>18</age>
+    <school>黑大</school>
+</userinfo> -->
