@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+    </ul>
+
+
+    <script>
+        /* let arr = ['a', 'b', 'c', 'd'];
+        console.log(arr.join(''));
+
+        let str = 'abcdefg';
+        str.split('').reverse().join(''); */
+
+        /* let arr = [4, 3, 1, 7, 5, 2, 11, 22];
+        console.log(arr.sort(function (a, b) {
+            return b - a;
+        })); */
+
+        /* let userList = [{
+            name: 'zs',
+            age: 20
+        }, {
+            name: 'ls',
+            age: 18
+        }, {
+            name: 'ww',
+            age: 30
+        }];
+
+        console.log(userList.sort(function(a, b){
+            return a.age - b.age;
+        })); */
+
+
+        /* let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        console.log(arr.sort(function(){
+            return Math.random() - 0.5;
+        })); */
+
+        // let arr = [1, 2, 3, 4, 5, 6];
+        // arr.splice(2, 0, 8);
+        // arr.splice(2, 2, 8, 9);
+        // arr.splice(2, 2);
+        // arr.splice(2);
+        // arr.splice(n, 1);
+        // console.log(arr);
+
+
+        /* let aLi = document.querySelectorAll('#ul1 li');
+        var [li1, li2, li3, li4] = aLi;
+        // arr.push(5);
+        console.log(li1, li2, li3, li4); */
+
+        /* let arr = Array.of(1, true, 'aa', [1,2,3], {name:'zs'});
+        console.log(arr); */
+
+        // let arr = Array.of(...arg);
+
+        /* let arr = new Array(1, 2, 3);
+        console.log(arr); */
+
+        /* let arr = new Array(3).fill(0);
+        console.log(arr); */
+
+        /*  let arr = [1, 2, 3, 4, 5];
+         arr.fill('xx', 1, 3);
+         console.log(arr); */
+
+        /* let arr = [1, 2, 3, NaN, 4, 5];
+        console.log(arr.indexOf(NaN));
+        console.log(arr.includes(NaN));//boolean */
+
+        let arr = ['a', 'b', 'c', 'd'];
+        /* for(let i=0; i<arr.length; i++){
+                console.log(arr[i]);
+        } */
+
+        /* for(let item of arr){
+            console.log(item);
+        } */
+
+        /* for(let item of arr.keys()){
+            console.log(item);
+        } */
+
+        /*  for(let [index, item] of arr.entries()){
+             console.log(index, item);
+         } */
+
+        /* let res = arr.forEach(function (elem, index, self) {
+            console.log(elem, index, self);
+        });
+        console.log(res); */
+
+        let arr2 = [4, 5, 6, 7, 8];
+        /* var arr3 = arr2.map(function(elem, index, self){
+            if(elem > 5){
+                return elem;
+            }
+        });
+        console.log(arr3); */
+
+        /* var arr3 = arr2.filter(function(elem, index, self){
+            if(elem > 5){
+                return elem;
+            }
+        });
+        console.log(arr3); */
+
+        /* var arr3 = arr2.some(function(elem, index, self){
+            if(elem > 5){
+                return elem;
+            }
+        });
+        console.log(arr3); */
+
+        var arr3 = arr2.every(function(elem, index, self){
+            if(elem > 5){
+                return elem;
+            }
+        });
+        console.log(arr3);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
