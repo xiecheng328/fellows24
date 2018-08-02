@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul id="nav">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+
+    <script>
+        // var -> variable
+        /* a = 5;
+        console.log(a); */
+
+
+        /*  var a = 5;
+         function foo() {
+             var a = 6;
+             console.log('1==' + a);
+         }
+         foo();
+         console.log('2==' + a); */
+
+        /* console.log(a);//var 变量提升
+        var a = 5; */
+
+        /*   var a;
+          console.log(a);
+          a = 5; */
+
+        /*  var i = 8;
+ 
+         for(var i=0; i<5; i++){
+             console.log(i);
+         }
+ 
+         console.log(i);//var 没有块级作用域 */
+
+
+        /* if(false){
+            var a = 5;
+        }
+        console.log(a); */
+
+
+        /* console.log(a);
+        let a = 5; */
+
+        /* var a = 5;
+        var a = 6;
+        console.log(a); */
+
+        /* let a = 5;
+        let a = 6;
+        console.log(a); */
+
+
+        /* for(let i=0; i<5; i++){
+            console.log(i);
+        }
+
+        console.log(i); */
+
+        /* if(false){
+            let a = 5;
+        }
+        console.log(a); */
+
+
+        /* function foo() {
+            console.log(a);
+            let a = 5;
+        }
+        foo(); */
+
+
+        /* var aLi = document.querySelectorAll('#nav li');
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                console.log(this.index);
+            };
+        } */
+
+
+        // 闭包    内存泄漏
+        /* var aLi = document.querySelectorAll('#nav li');
+        for(var i=0; i<aLi.length; i++){
+            (function(idx){
+                 aLi[idx].onclick = function(){
+                    console.log(idx);
+                };
+            })(i);
+        }
+
+        // GC
+        function fn1(){
+            return function fn2(){
+                var a = 5;
+                return a;
+            }
+        }
+        console.log(fn1()());
+ */
+
+        /* var aLi = document.querySelectorAll('#nav li');
+        for(let i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                console.log(i);
+            };
+        } */
+
+
+        /*  const a = 5;
+         a = 6; */
+
+        /* const obj  = {
+            name: 'zhangsan',
+            age: 18
+        };
+        Object.freeze(obj);
+        obj.age = 20;
+        console.log(obj); */
+
+        /* const obj  = {
+            name: 'zhangsan',
+            age: 18
+        };
+
+        obj = {
+            age: 20
+        };// new Object() */
+
+
+        /*  const arr = [1, 2, 3, 4];
+         arr.push(5);
+         console.log(arr); */
+
+
+        /* let aa = 5;
+        console.log(window.aa); */
+
+
+        /* console.log('1==' + a);
+        var a = 5;
+        function a(){
+            console.log('2==' + a);
+        }
+        a();
+        console.log('3==' + a); */
+
+
+        /* foo();
+        function foo() {
+            console.log(123);
+        } */
+        
+       /*  foo();
+        var foo = function(){
+            console.log(456);
+        }; */
+
+
+        
+    {
+        var a = 5;
+        let b = 6;
+    }
+    console.log(a);
+    console.log(b);
+    
+
+
+    </script>
+</body>
+
+</html>
