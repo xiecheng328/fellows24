@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+
+    </ul>
+
+    <!-- <script src="jquery-1.12.4.js"></script> -->
+    <script>
+        let movieUrl = 'https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters';
+        
+       // jq的Ajax
+        /* $.get(movieUrl, res=>{
+            console.log(res.subjects);
+            let $list = $('#list');
+            for(let movie of res.subjects){
+                let $li = $(`<li>${movie.title}</li>`);
+                $list.append($li);
+            }
+        }, 'json'); */
+
+        // Ajax 原理
+
+        // 创建 XMLHttpRequest 对象
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        // 发送请求
+        xmlhttp.open("GET", movieUrl, true);
+        xmlhttp.send();
+
+        // 服务端响应
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            //    console.log(xmlhttp.responseText);
+               let obj = JSON.parse(xmlhttp.responseText);
+               console.log(obj);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

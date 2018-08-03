@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="jquery-1.12.4.js"></script>
+
+<script>
+    // callback hell
+    /*$.get('a.json', res=> {
+        console.log(res);
+        $.get('b.json', res=>{
+            console.log(res);
+            $.get('c.json', res=>{
+                console.log(res);
+            });
+        });
+    });*/
+
+
+    /*new Promise((resolve, reject)=>{
+        $.get('a.json', res=>{
+            console.log(res);
+            // resolve(res.a); //成功
+            reject(); // 失败
+        });
+    }).then((resA)=>{
+        // 成功
+        console.log('a成功');
+        console.log(resA);
+        return new Promise((resolve, reject)=>{
+            $.get('b.json', res=>{
+                console.log(res);
+                resolve();
+            });
+        })
+    }, ()=>{
+        // 失败
+        console.log('a失败');
+    }).then(()=>{
+        console.log('b成功');
+        return new Promise((resolve, reject)=>{
+            $.get('c.json', res=>{
+                console.log(res);
+                resolve();
+            });
+        });
+    }, ()=>{
+        console.log('b失败');
+    }).then(()=>{
+        console.log('c成功');
+    }, ()=>{
+        console.log('c失败');
+    });*/
+
+
+    function getPromise(url) {
+        return new Promise((resolve, reject) => {
+            $.get(url, res => {
+                resolve(res);
+            }, 'json');
+        });
+    }
+
+
+    /*getPromise('a.json').then(res=>{
+        console.log(res);
+        return getPromise('b.json');
+    }, err=>{
+
+    }).then(res=>{
+        console.log(res);
+        return getPromise('c.json');
+    }, err=>{
+
+    }).then(res=>{
+        console.log(res);
+    }, err=>{
+
+    });*/
+
+    /*let p1 = new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            console.log('p1');
+            resolve(1);
+        }, 2000);
+    });
+    let p2 = new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            console.log('p2');
+            resolve(2);
+        }, 1000);
+    });
+    let p3 = new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            console.log('p3');
+            resolve(3);
+        }, 3000);
+    });*/
+
+    /*Promise.all([p1, p2, p3]).then(res=>{
+        console.log('全完成');
+        console.log(res);
+    }, err=>{
+        console.log('失败了');
+        console.log(err);
+    });
+*/
+
+    /*Promise.race([p1, p2, p3]).then(res=>{
+        console.log('全完成');
+        console.log(res);
+    }, err=>{
+        console.log('失败了');
+        console.log(err);
+    });*/
+
+    /*let p1 = new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            console.log('p1');
+            reject(1);
+        }, 2000);
+    }).then(res=>{
+        console.log('成功');
+    }).catch(err=>{
+        console.log('失败');
+    });*/
+
+
+    // throw new Error('这是个错误');
+
+
+    Promise.resolve();
+    Promise.reject();
+
+</script>
+</body>
+</html>
