@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let s1 = new Set([5, 6, 7, 8, 7, 8]);
+        // console.log(s1);
+
+        // 数组去重
+        // let arr = [2, 3, 5, 6, 4, 1, 3];
+        // let s2 = new Set(arr);
+        // console.log(s2);
+
+        // for(let [index, item] of s2.entries()){
+        //     console.log(index, item);
+        // }
+
+       /*  let result = [];
+        for(let [index, item] of arr.entries()){
+            if(!result.includes(item)){
+                result.push(item);
+            }
+        }
+        console.log(result); */
+
+       /*  s1.add(9);
+        console.log(s1);
+
+        s1.delete(6);
+        console.log(s1);
+
+        console.log(s1.size); */
+
+
+        let ws = new WeakSet();
+        let obj1 = {
+            name: 'xx',
+            age: 18
+        };
+        ws.add(obj1);
+        let obj2 = obj1;
+        ws.add(obj2);
+        console.log(ws);
+    </script>
+</body>
+
+</html>

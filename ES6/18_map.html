@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var m1 = new Map();
+        m1.set('age', 20);   
+        m1.set('school', 'XX'); 
+        let obj = {
+            name: 'zs'
+        };
+        m1.set(obj, 'yy');
+        m1.set(obj, 'zz');
+        // console.log(m1);
+        // console.log(m1.get('age'));
+
+        for(let [index,item] of m1.entries()){
+            console.log(`${index}---${item}`);
+        }
+        
+    </script>
+</body>
+</html>

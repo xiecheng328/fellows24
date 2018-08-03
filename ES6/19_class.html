@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* function People(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        People.prototype.showName = function(){
+            console.log(this.name);
+        };
+
+        let p1 = new People('zs', 20);
+        console.log(p1);
+        p1.showName();
+
+        // 基于原型的继承
+        function Coder(name, age, company){
+            People.call(this, name, age); // 继承父类的属性
+            this.company = company;
+        }
+
+        Coder.prototype = new People(); // 继承父类的方法
+
+        Coder.prototype.showCompany = function(){
+            console.log(this.company);
+        };
+        
+        Coder.fn = function(){
+            console.log('我是静态方法');
+        };
+
+        let c1 = new Coder('lisi', 28, '唯创');
+        console.log(c1);
+        c1.showName();
+        c1.showCompany();
+
+        Coder.fn(); */
+
+
+
+
+        // let now = new Date();
+        // let arr = new Array();
+        // let srt = new String();
+        // Math.random(); 
+
+
+
+
+        // ES6
+        class People{
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+            showName(){
+                console.log(this.name);
+            }
+        }
+
+        let p1 = new People('zs', 20);
+        console.log(p1);
+        p1.showName();
+
+        class Coder extends People{
+            constructor(name, age, company){
+                super(name, age);
+                this.company = company;
+            }
+            showCompany(){
+                console.log(this.company);
+            }
+            static foo(){
+                console.log('我是静态方法');
+            }
+        }
+
+        let c1 = new Coder('lisi', 30, 'baidu');
+        console.log(c1);
+        c1.showName();
+        c1.showCompany();
+        Coder.foo();
+
+
+
+
+
+    </script>
+</body>
+
+</html>
