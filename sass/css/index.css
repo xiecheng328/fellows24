@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/* 这是一个多行注释 */
+/*! 这是一个强制注释 */
+#div1 {
+  width: 200px;
+  height: 200px;
+  background: #f00;
+}
+#div1 .aa {
+  font-size: 12px;
+}
+#div1 .aa .bb {
+  background: #cccccc;
+}
+#div1 .aa:hover {
+  background: #00ff00;
+}
+
+#div2 {
+  color: #f00;
+}
+
+#div3 {
+  width: 200px;
+}
+
+.dialog {
+  width: 200px;
+}
+.dialog-container {
+  height: 200px;
+}
+.dialog-title {
+  font-size: 18px;
+}
+.dialog-title-close {
+  float: left;
+  background-color: #f00;
+  background-image: url(xx.jpg);
+  background-position: right top;
+  border-left-color: transparent;
+  border-left-style: solid;
+  border-left-width: 2px;
+}
+
+#div4 {
+  background: #f00;
+}
+
+#div5 {
+  width: 200px;
+  height: 200px;
+  background: #f00;
+  font-size: 20px;
+}
+
+#div6, #div7 {
+  width: 300px;
+  height: 300px;
+  background: #0f0;
+}
+
+#div6, #div7 {
+  width: 400px;
+  height: 400px;
+  background: #ccc;
+}
+#div6 .aa, #div7 .aa {
+  background: #f00;
+}
+
+#div7 {
+  font-size: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  border: 0;
+}
+
+#div8 {
+  width: 2px;
+  background: #ccc url(xx.jpg) no-repeat left top/cover;
+}
+
+#div9 {
+  width: 3%;
+  background: rgba(255, 0, 0, 0.3);
+}
+
+/*# sourceMappingURL=index.css.map */

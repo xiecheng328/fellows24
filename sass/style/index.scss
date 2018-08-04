@@ -1,0 +1,97 @@
+/* 这是一个多行注释 */
+// 这是一个单行注释
+/*! 这是一个强制注释 */
+
+$color: #f00;
+$w: 200px;
+#div1{
+    width: $w;
+    height: $w;
+    background: $color;
+    .aa{
+        font-size: 12px;
+        .bb{
+            background: #cccccc;
+        }
+        &:hover{
+            background: #00ff00;
+        }
+    }
+}
+#div2{
+    color: $color;
+}
+#div3{
+    width: $w;
+}
+
+.dialog{
+    width: $w;
+    &-container{
+        height: $w;
+    }
+    &-title{
+        font-size: 18px;
+        &-close{
+            float: left;
+            background: {
+                color: $color;
+                image: url(xx.jpg);
+                position: right top;
+            };
+            border: {
+                left: {
+                    color: transparent;
+                    style: solid;
+                    width: 2px;
+                }
+            }
+        }
+    }
+}
+
+$bg: background;
+
+#div4{
+    #{$bg}: $color;
+}
+
+@mixin xx($num, $c:#ccc) {
+    width: $num;
+    height: $num;
+    background: $c;
+}
+
+#div5{
+    @include xx($c:#f00, $num:200px);
+    font-size: 20px;
+}
+
+#div6{
+    @include xx(300px, #0f0);
+}
+
+#div6{
+    @include xx($num:400px);
+    .aa{
+        background: $color;
+    }
+}
+
+#div7{
+    @extend #div6;
+    font-size: 20px;
+}
+
+@import 'base/common';
+
+#div8{
+    width: (20px / 10);
+    background: #ccc url(xx.jpg) no-repeat left top/cover;
+}
+
+$rg: rgba(255, 0, 0, 0.5 );
+#div9{
+    width: percentage(3 / 100);
+    background: transparentize($rg, .2);
+}
