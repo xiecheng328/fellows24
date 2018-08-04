@@ -95,3 +95,73 @@ $rg: rgba(255, 0, 0, 0.5 );
     width: percentage(3 / 100);
     background: transparentize($rg, .2);
 }
+
+$m: (light: #fff, dark: #000);
+
+#div10{
+    // background: map-get($m, dark);
+    background: map-keys($m);
+}
+
+$fz: font-size;
+#div11{
+    #{$fz}: 20px
+}
+
+/* 当前的属性是:#{$fz} */
+
+
+@function foo($arg){
+    @if($arg == 1){
+        @return #000;
+    }@else if($arg == 2){
+        @return #fff;
+    }@else{
+        @return #ccc;
+    }
+}
+
+#div12{
+    background: foo(5);
+}
+
+
+$column: 12;
+@for $i from 1 to $column{
+    .col-lg-#{$i}{
+        width: percentage($i / 100);
+    }
+}
+
+$icons: plus music search heart;
+
+@each $icon in $icons {
+    .glyphicon-#{$icon}{
+        background: url($icon+ '.png');
+    }
+}
+
+$i:5;
+@while $i > 0 {
+    .col-md-#{$i}{
+        width: percentage($i / 100);
+    }
+    $i: $i - 2;
+}
+
+$map: (light: #fff, dark: #000);
+@function get-color($color){
+    @if(map-has-key($map, $color)){
+        @return  map-get($map, $color);
+    }@else if(){
+        @error '你传入的颜色不存在';
+        @return #ccc;
+    }
+}
+
+#div13{
+    background: get-color(light);
+}
+
+
+
