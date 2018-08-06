@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "f74c39fd9ddf44f7bb36";
+/******/ 	var hotCurrentHash = "f4d32307bf576129846e";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -782,7 +782,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "http://127.0.0.1:8081/";
 /******/
 /******/ 	// __webpack_hash__
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
@@ -801,7 +801,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("let oDiv2 = document.querySelector('#div2');\noDiv1.innerHTML = 'Hello Wolrd index2';\n\n//# sourceURL=webpack:///./src/index2.js?");
+eval("let oDiv2 = document.querySelector('#div2');\noDiv2.innerHTML = 'Hello Wolrd index2';\n\n//# sourceURL=webpack:///./src/index2.js?");
 
 /***/ })
 
