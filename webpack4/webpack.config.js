@@ -2,13 +2,14 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
+const glob = require('glob');
+const entry = require('./webpack_config/entry_webpack.js');
+const CopyWebpackPlugin= require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'development',//development production
-    entry: {
-        index: './src/index.js',
-        index2: './src/index2.js',
-    },
+    entry: entry,
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].js',
@@ -20,8 +21,13 @@ module.exports = {
                 test: /\.css$/,
                 // use: ['style-loader', 'css-loader']
                 use: ExtractTextWebpackPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader'
+                    fallback: "style-loader",
+                    use: [{
+                        loader: "css-loader",
+                        options: {
+                            importLoaders: 1
+                        }
+                    }, 'postcss-loader']
                 })
             }, {
                 test: /\.(png|jpg|gif)$/,
@@ -38,6 +44,24 @@ module.exports = {
             }, {
                 test: /\.(htm|html)$/,
                 loader: 'html-withimg-loader'
+            }, {
+                test: /\.scss$/,
+                // use: ['style-loader', 'css-loader', 'sass-loader']
+                use: ExtractTextWebpackPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader']
+                })
+            }, {
+                test: /\.(jsx|js)$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            'env', 'react'
+                        ]
+                    }
+                },
+                exclude: /node_modules/
             }
         ]
     },
@@ -65,7 +89,19 @@ module.exports = {
             hash: true,
             template: './src/index2.html'
         }) */
-        new ExtractTextWebpackPlugin('css/index.css')
+        new ExtractTextWebpackPlugin('css/index.css'),
+        new PurifyCSSPlugin({
+            // Give paths to parse for rules. These should be absolute!
+            paths: glob.sync(path.join(__dirname, 'src/*.html')),
+        }),
+        new webpack.BannerPlugin('唯创，成哥~~~'),
+        new webpack.ProvidePlugin({
+            $: 'jquery'
+        }),
+        new CopyWebpackPlugin([{
+            from: __dirname + '/src/public',
+            to: './public'
+        }])
     ],
     devServer: {
         contentBase: path.resolve(__dirname, './dist'),

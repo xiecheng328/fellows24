@@ -1,3 +1,4 @@
+/*! 唯创，成哥~~~ */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	function hotDisposeChunk(chunkId) {
 /******/ 		delete installedChunks[chunkId];
@@ -64,7 +65,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "f4d32307bf576129846e";
+/******/ 	var hotCurrentHash = "02f005fa3589002c1ac2";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -799,9 +800,10 @@
   !*** ./src/index2.js ***!
   \***********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("let oDiv2 = document.querySelector('#div2');\noDiv2.innerHTML = 'Hello Wolrd index2';\n\n//# sourceURL=webpack:///./src/index2.js?");
+"use strict";
+eval("\n\nvar oDiv2 = document.querySelector('#div2');\noDiv2.innerHTML = 'Hello Wolrd index2';\n\n//# sourceURL=webpack:///./src/index2.js?");
 
 /***/ })
 
