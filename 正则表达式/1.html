@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+        regular expression 
+
+     -->
+
+     <div class="cc aa bb"></div>
+
+    <script>
+        /*  let str = '123abc';
+         //  console.log(str.indexOf('ab'));
+         //  console.log(str.includes('ab'));
+         let n = 'ab';
+ 
+         let reg = /ab/;
+         console.log(reg.test(str));
+         console.log(reg.exec(str));
+ 
+         let reg2 = new RegExp(n);
+         console.log(reg2.test(str)); */
+        console.log(getByClass('aa'));
+
+
+        function getByClass(clsName) {
+            if (document.getElementsByClassName) {
+                return document.getElementsByClassName(clsName);
+            } else {
+                var allElems = document.getElementsByTagName('*');
+                var result = [];
+                for (var i = 0; i < allElems.length; i++) {
+                    // 应该使用正则表达式
+                    var reg = new RegExp('\\b' +clsName + '\\b');
+                    if (reg.test(allElems[i].className)) {
+                        result.push(allElems[i]);
+                    }
+                }
+                return result;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

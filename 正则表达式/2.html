@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 30CAC0040 取出40
+        // 3SFASDF92 取出92
+
+        /* let str = '30CAC0040';
+        let reg = /\d+$/;
+        console.log(reg.exec(str)); */
+
+        // 蓝色理 想
+
+        /* let str = '蓝   色 理    想';
+        let reg = /\s+/g;
+    
+        console.log(str.replace(reg, ' ')); */
+
+
+        // 判断字符串是不是由数字组成
+        /* let str = '12a345123';
+        let reg1 = /\D/;
+        console.log(!reg1.test(str));
+    
+        let reg2 = /^\d[0-9]+\d$/;
+        console.log(reg2.test(str)); */
+
+
+        // 电话：  0451-87654321-1234
+
+        // let reg = /^\d{3,4}-\d{7,8}(-\d{3,4})?$/;
+
+
+        // 正则验证手机号，忽略前面的0，支持130-139，150-159。忽略前面0之后判断它是11位的。
+
+        /* let str = '13136666328';
+        let reg = /^(13|15)\d{9}$/;
+        console.log(reg.test(str)); */
+
+        //删除字符串两侧的空白字符。
+        function trim(str) {
+            return str.replace(/^\s+|\s+$/g, '');
+        }
+
+        let str = '   aa  a  '
+        // console.log(str.trim());
+        console.log(trim(str));
+
+
+    </script>
+</body>
+
+</html>
