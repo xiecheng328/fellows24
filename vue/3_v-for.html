@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) in arr">
+                {{item}} {{index}}
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="(student,index) in stuSort">
+                <span>学生姓名：{{student.name}}</span>
+                <span>学生年龄: {{student.age}}</span>
+                <span>索引： {{index}}</span>
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="(val,key) in dog">
+                {{ val }} {{ key }}
+            </li>
+        </ul>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                arr: ['html', 'css', 'js', 'vue'],
+                stuList: [
+                    {
+                        name: 'zs',
+                        age: 20
+                    }, {
+                        name: 'lisi',
+                        age: 18
+                    }, {
+                        name: 'ww',
+                        age: 30
+                    }
+                ],
+                dog: {
+                    name: 'wangcai',
+                    age: 3,
+                    color: 'white'
+                }
+            },
+            computed: {
+                stuSort(){
+                    console.log(this);
+                    return this.stuList.sort((a, b) => {
+                        return a.age - b.age;
+                    });
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

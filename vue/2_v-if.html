@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+
+        <div v-if="isLogin">
+            用户名是: 唯创
+        </div>
+        <div v-else>
+            <a href=""> 请登录</a>
+        </div>
+
+        <div v-if="str == 'A'">A</div>
+        <div v-else-if="str == 'B'">B</div>
+        <div v-else-if="str == 'C'">C</div>
+        <div v-else>D</div>
+
+        <div v-show="isLogin">
+            show
+        </div>
+
+    </div>
+
+    <script src="vue.js"></script>
+
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'Hello World',
+                isLogin: false,
+                str: 'A'
+            }
+        });
+    
+    
+    
+        // var oApp = document.getElementById('app');
+        // oApp.innerHTML  = 'Hello World';
+    </script>
+
+</body>
+</html>
