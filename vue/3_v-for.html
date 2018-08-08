@@ -21,6 +21,8 @@
                 <span>学生姓名：{{student.name}}</span>
                 <span>学生年龄: {{student.age}}</span>
                 <span>索引： {{index}}</span>
+
+                <button @click="showName(student)">showName</button>
             </li>
         </ul>
 
@@ -61,6 +63,11 @@
                     return this.stuList.sort((a, b) => {
                         return a.age - b.age;
                     });
+                }
+            },
+            methods: {
+                showName(stu){
+                    console.log(stu.name, stu.age);
                 }
             }
         });
