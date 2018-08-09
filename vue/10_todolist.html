@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>todolist</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <style>
+        .red {
+            background: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="text-center">
+        <h1>todolist</h1>
+        <hr>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="warning">
+                    <td>选择</td>
+                    <td>商品名称</td>
+                    <td>商品价格</td>
+                    <td>删除</td>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr @click="select(product)" v-for="(product, index) in productList" :class=" product.isRed?'red': '' ">
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>{{product.productName}}</td>
+                    <td>{{product.productPrice}}</td>
+                    <td>
+                        <button type="button" class="btn btn-warning glyphicon glyphicon-remove btn-xs"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-xs">删除选中</button>
+                    </td>
+                    <td colspan="3">
+                        总价是： 0 元
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+
+
+
+
+    </div>
+
+
+    <script src="vue.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                productList: [{
+                    productName: '衣服',
+                    productPrice: 123,
+                    isRed: false
+                }, {
+                    productName: '裤子',
+                    productPrice: 456,
+                    isRed: false
+                }, {
+                    productName: '鞋',
+                    productPrice: 222,
+                    isRed: false
+                }, {
+                    productName: '手机',
+                    productPrice: 555,
+                    isRed: false
+                }, {
+                    productName: '帽子',
+                    productPrice: 111,
+                    isRed: false
+                }],
+            },
+            methods: {
+                select(product) {
+                    product.isRed = !product.isRed;
+                }
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
