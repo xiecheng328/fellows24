@@ -12,6 +12,10 @@
         .red {
             background: #ff0000;
         }
+
+        .add-form {
+            margin: 20px 0;
+        }
     </style>
 </head>
 
@@ -19,6 +23,26 @@
     <div id="app" class="text-center">
         <h1>todolist</h1>
         <hr>
+        <form class="form-inline" @submit.prevent>
+            <div class="form-group">
+                <input v-model.trim="keyword" type="text" class="form-control" placeholder="请输入商品名称">
+            </div>
+            <button @click="search" type="submit" class="btn btn-default glyphicon glyphicon-search">搜索</button>
+        </form>
+
+        <form class="form-inline add-form" @submit.prevent>
+            <div class="form-group">
+                <label for="product-name">商品名称</label>
+                <input v-model.trim="productName" type="text" class="form-control" id="product-name" placeholder="请输入商品名称">
+            </div>
+            <div class="form-group">
+                <label for="product-price">商品价格</label>
+                <input v-model.number="productPrice" type="number" class="form-control" id="product-price" placeholder="商品价格">
+            </div>
+            <button @click="add" type="submit" class="btn btn-default glyphicon glyphicon-plus">增加</button>
+        </form>
+
+
         <table class="table table-bordered">
             <thead>
                 <tr class="warning">
@@ -32,33 +56,25 @@
             <tbody>
                 <tr @click="select(product)" v-for="(product, index) in productList" :class=" product.isRed?'red': '' ">
                     <td>
-                        <input type="checkbox">
+                        <input @click.stop type="checkbox" v-model="checkedList" :value="index">
                     </td>
                     <td>{{product.productName}}</td>
                     <td>{{product.productPrice}}</td>
                     <td>
-                        <button type="button" class="btn btn-warning glyphicon glyphicon-remove btn-xs"></button>
+                        <button @click="del(index)" type="button" class="btn btn-warning glyphicon glyphicon-remove btn-xs"></button>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <button type="button" class="btn btn-danger btn-xs">删除选中</button>
+                        <button @click="delChecked" type="button" class="btn btn-danger btn-xs">删除选中</button>
                     </td>
                     <td colspan="3">
-                        总价是： 0 元
+                        总价是：{{total}} 元
                     </td>
                 </tr>
             </tbody>
-
         </table>
-
-
-
-
-
-
     </div>
-
 
     <script src="vue.js"></script>
 
@@ -87,10 +103,67 @@
                     productPrice: 111,
                     isRed: false
                 }],
+                checkedList: [],
+                productName: '',
+                productPrice: 0,
+                keyword: ''
             },
             methods: {
                 select(product) {
                     product.isRed = !product.isRed;
+                    this.total + product.productPrice
+                },
+                del(index) {
+                    this.productList.splice(index, 1);
+                },
+                delChecked() {
+                    this.productList = this.productList.filter((elem, index) => {
+                        if (!this.checkedList.includes(index)) {
+                            return elem;
+                        }
+                    });
+                    this.checkedList = [];
+                    // for(let i=0; i<this.checkedList.length; i++){
+                    //     this.productList.splice(this.checkedList[i], 1);
+
+                    // }
+                    // 0 1 2 3 4
+                    // 0 2 3 
+                },
+                add() {
+                    this.productList.push({
+                        productName: this.productName,
+                        productPrice: this.productPrice,
+                        isRed: false
+                    });
+                    this.productName = '';
+                    this.productPrice = 0;
+                },
+                search() {
+                    this.productList = this.productList.filter(function (elem, index) {
+                        // console.log(this);
+                        if (elem.productName.includes(this.keyword)) {
+                            return elem;
+                        }
+                    }.bind(this));
+                }
+            },
+            computed: {
+                total() {
+                    /* let sum = 0;
+                    this.productList.forEach(elem => {
+                        if (elem.isRed) {
+                            sum += elem.productPrice;
+                        }
+                    });
+                    return sum; */
+
+                    return this.productList.reduce((sum, elem) => {
+                        if (elem.isRed) {
+                            sum += parseInt(elem.productPrice);
+                        }
+                        return sum;
+                    }, 0);
                 }
             }
         });
