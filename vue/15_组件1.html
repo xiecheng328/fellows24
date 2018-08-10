@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <weichuang></weichuang>
+        <weichuang></weichuang>
+        <weichuang></weichuang>
+
+
+        <ul>
+            <todolist @click.native="select(item)" v-for="(item, index) in productList" :key="index" :productname="item.productName"
+                :productprice="item.productPrice"></todolist>
+        </ul>
+    </div>
+
+    <template id="temp1">
+        <li>
+            <span>{{productname}}</span>
+            <span>{{productprice}}</span>
+        </li>
+    </template>
+
+
+    <script src="vue.js"></script>
+
+    <script>
+        Vue.component('weichuang', {
+            template: `
+                <div>
+                    <h1>唯创网讯</h1>
+                    <h1>全栈培训</h1>
+                </div>
+            `
+        });
+
+        Vue.component('todolist', {
+            data() {
+                return {
+
+                };
+            },
+            template: '#temp1',
+            props: {
+                productname: String,
+                productprice: Number
+            }
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                productList: [
+                    {
+                        productName: '衣服',
+                        productPrice: '123',
+                        isRed: false
+                    }, {
+                        productName: '裤子',
+                        productPrice: 456,
+                        isRed: false
+                    }, {
+                        productName: '鞋',
+                        productPrice: 222,
+                        isRed: false
+                    }
+                ]
+            },
+            methods: {
+                select(item) {
+                    console.log(item.productName);
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

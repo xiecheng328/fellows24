@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+            <button-counter></button-counter>
+            <button-counter></button-counter>
+            <button-counter></button-counter>
+
+            <user-name></user-name>
+
+
+            <table>
+                <!-- <my-row></my-row> -->
+                <tr is="my-row"></tr>
+
+            </table>
+    </div>
+
+    <script src="vue.js"></script>
+
+
+    <script>
+        Vue.component('button-counter', {
+            data: function () {
+                return {//new Object()
+                    count: 0
+                }
+            },
+            template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+        });
+
+        Vue.component('my-row', {
+            template: '<tr>div</tr>'
+        });
+
+
+
+
+        new Vue({
+            el: '#app',
+            components: {
+                userName: {
+                    template: `
+                    <div>
+                        <input type="text">
+                        <div>123</div>
+                    </div>
+                   
+                    
+                    `
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
