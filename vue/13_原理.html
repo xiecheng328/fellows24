@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+
+    </div>
+
+    <script>
+        let data = {
+            productList: [{
+                productName: '衣服',
+                productPrice: 123,
+                isRed: false
+            }, {
+                productName: '裤子',
+                productPrice: 456,
+                isRed: false
+            }, {
+                productName: '鞋',
+                productPrice: 222,
+                isRed: false
+            }, {
+                productName: '手机',
+                productPrice: 555,
+                isRed: false
+            }, {
+                productName: '帽子',
+                productPrice: 111,
+                isRed: false
+            }],
+            checkedList: [],
+            productName: '衣服',
+            productPrice: 0,
+            keyword: ''
+        };
+
+        Object.keys(data).forEach((key) => {
+            define(data, key, data[key]);
+        });
+
+        function define(data, key, val) {
+            Object.defineProperty(data, key, {
+                get(){
+                    console.log('获取');
+                    return val;
+                },
+                set(newVal){
+                    console.log('设置', `旧值是${val}`, `新值是${newVal}`);
+                    val = newVal;
+                }
+            });
+        }
+
+        console.log(data.productName);
+        data.productName = '裤子';
+        console.log(data.productName);
+
+    </script>
+</body>
+
+</html>

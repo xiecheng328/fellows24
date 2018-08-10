@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="change">change</button>
+        <ul>
+            <li v-for="(item,index) in arr">
+                {{ item }}
+            </li>
+        </ul>
+    </div>
+
+    <script src="vue.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                arr: ['a', 'b', 'c', 'd']
+            },
+            methods: {
+                change(){
+                    // console.log(this.arr[1]);
+                    // this.arr[1] = 'xx';
+                    Vue.set(this.arr, 1, 'xx');
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

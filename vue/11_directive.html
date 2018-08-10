@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .div1 {
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+
+        <div v-weichuang='bg'>唯创</div>
+
+        <h1 v-weichuang='bg2' v-drag>网讯</h1>
+
+
+        <div class="div1" v-drag v-xx></div>
+
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        Vue.directive('weichuang', (el, binding, vNode) => {
+            // console.log(el);
+            // console.log(binding);
+            // console.log(vNode);
+            el.style.background = binding.value;
+        });
+
+        Vue.directive('drag', (el, binding, vNode) => {
+            el.style.position = 'absolute';
+            el.onmousedown = function (e) {
+                let xDis = e.clientX - el.offsetLeft;
+                let yDis = e.clientY - el.offsetTop;
+                document.onmousemove = function (e) {
+                    el.style.left = e.clientX - xDis + 'px';
+                    el.style.top = e.clientY - yDis + 'px';
+                };
+                el.onmouseup = function () {
+                    document.onmousemove = null;
+                };
+            };
+        });
+
+        Vue.directive('xx', {
+            bind: function () {
+                console.log('bind');
+            },
+            inserted: function () {
+                console.log('inserted');
+            },
+            update: function () {
+                console.log('update');
+            },
+            componentUpdated: function () {
+                console.log('componentUpdated');
+            },
+            unbind: function () {
+                console.log('unbind');
+            }
+        })
+
+
+        new Vue({
+            el: '#app',
+            data: {
+                bg: '#f00',
+                bg2: '#0f0'
+            }
+        })
+
+    </script>
+</body>
+
+</html>

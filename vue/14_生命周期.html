@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="count++">add</button>
+        <button @click="destory">destory</button>
+        {{ count }}
+
+        <!-- <img src="loading.gif" alt="" v-show="loading"> -->
+        用户名：<input type="text" id="username">
+
+        <ul>
+            <li v-for="(item,index) in movieList">
+                {{ item.title }}
+            </li>
+        </ul>
+    </div>
+
+    <script src="vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                count: 0,
+                loading: true,
+                movieUrl: 'https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters',
+                movieList: [],
+                timer: null
+            },
+            methods: {
+                destory() {
+                    this.$destroy();
+                }
+            },
+            beforeCreate() {
+                console.log('beforeCreate');
+            },
+            created() {
+                console.log('created');
+                // console.log(this.$el);
+                document.getElementById('username').focus();
+
+                this.timer = setInterval(()=>{
+                    this.count++;
+                    console.log('timer');
+                }, 1000);
+            },
+            beforeMount() {
+                console.log('beforeMount');
+            },
+            mounted() {
+                console.log('mounted');
+                this.loading = false;
+                // console.log(this.$el);
+                /* axios.get(this.movieUrl).then(res=>{
+                    console.log(res.data.subjects);
+                    this.movieList = res.data.subjects;
+                }); */
+            },
+            beforeUpdate() {
+                console.log('beforeUpdate');
+            },
+            updated() {
+                console.log('updated');
+            },
+            beforeDestroy() {
+                console.log('beforeDestroy');
+                clearInterval(this.timer);
+            },
+            destroyed() {
+                console.log('destroyed');
+            }
+        });
+
+    </script>
+</body>
+
+</html>
