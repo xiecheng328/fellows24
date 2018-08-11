@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 登录 -->
+        <comp1>
+            <span slot="title">登录</span>
+            <template slot="content">
+                用户名：
+                <input type="text"> 密码 ：
+                <input type="password">
+            </template>
+        </comp1>
+
+        <!-- 注册 -->
+        <comp1>
+            <span slot="title">注册</span>
+            <div slot="content">
+                密码 ：
+                <input type="password"> 邮箱:
+                <input type="email"> 手机号:
+                <input type="text">
+            </div>
+        </comp1>
+    </div>
+
+    <!-- 具名插槽 -->
+    <template id="temp1">
+        <div>
+            <h1>
+                <slot name="title"></slot>
+            </h1>
+            <form action="">
+                <slot name="content"></slot>
+            </form>
+        </div>
+    </template>
+
+    <script src="vue.js"></script>
+
+    <script>
+
+        new Vue({
+            el: '#app',
+            components: {
+                comp1: {
+                    template: '#temp1'
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
