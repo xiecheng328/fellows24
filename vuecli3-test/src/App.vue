@@ -8,15 +8,18 @@
       <router-link to="/mine/test2">子路由2</router-link> |
       <router-link to="/testUrl/555/zhangsan">URL传参</router-link> |
       <router-link to='/xx/666/lisi'>重定向</router-link> |
-      <router-link to='/minealias'>alias</router-link>
+      <router-link to='/minealias'>alias</router-link> |
+      <router-link to='/movie'>电影列表</router-link>
     </div>
-    <router-view/>
+    <transition name="fade">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -31,5 +34,25 @@
       color: #42b983;
     }
   }
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: opacity 1s ease;
+}
+.fade-enter-to {
+  opacity: 1;
+}
+
+.fade-leave {
+  transform: translateX(0);
+}
+.fade-leave-active {
+  transition: transform 1s ease;
+}
+.fade-leave-to {
+  transform: translateX(100%);
 }
 </style>

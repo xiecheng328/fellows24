@@ -5,11 +5,13 @@ import Mine from './views/Mine.vue';
 import Test1 from './views/Test1.vue'
 import Test2 from './views/Test2.vue'
 import TestUrl from './views/TestUrl.vue'
+import Error from './views/Error.vue'
+import Movie from './views/Movie.vue'
+import MovieDetail from './views/MovieDetail.vue'
 
 Vue.use(Router);
-
-export default new Router({
-  mode: 'history',
+const router = new Router({
+  mode: 'history',//hash
   base: process.env.BASE_URL,
   routes: [
     {
@@ -24,6 +26,10 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      beforeEnter: (to, from, next) => {
+        // ...
+        next();
+      }
     }, {
       path: '/mine',
       name: 'mine',
@@ -46,6 +52,27 @@ export default new Router({
     }, {
       path: '/xx/:userid/:username',
       redirect: '/testUrl/:userid/:username'
+    }, {
+      path: '*',
+      component: Error
+    }, {
+      path: '/movie',
+      component: Movie
+    }, {
+      path: '/moviedetail/:movieId',
+      component: MovieDetail
     }
   ],
 });
+
+router.beforeEach((to, from, next) => {
+  console.log(to);
+  console.log(from);
+  next();
+});
+
+router.afterEach((to, from) => {
+  // ...
+})
+
+export default router;
