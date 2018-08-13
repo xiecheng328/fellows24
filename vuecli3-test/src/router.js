@@ -8,6 +8,7 @@ import TestUrl from './views/TestUrl.vue'
 import Error from './views/Error.vue'
 import Movie from './views/Movie.vue'
 import MovieDetail from './views/MovieDetail.vue'
+import Count from './views/Count.vue'
 
 Vue.use(Router);
 const router = new Router({
@@ -61,13 +62,16 @@ const router = new Router({
     }, {
       path: '/moviedetail/:movieId',
       component: MovieDetail
+    }, {
+      path: '/count',
+      component: Count
     }
   ],
 });
 
 router.beforeEach((to, from, next) => {
-  console.log(to);
-  console.log(from);
+  // console.log(to);
+  // console.log(from);
   next();
 });
 

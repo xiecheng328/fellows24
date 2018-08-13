@@ -9,7 +9,8 @@
       <router-link to="/testUrl/555/zhangsan">URL传参</router-link> |
       <router-link to='/xx/666/lisi'>重定向</router-link> |
       <router-link to='/minealias'>alias</router-link> |
-      <router-link to='/movie'>电影列表</router-link>
+      <router-link to='/movie'>电影列表</router-link> | 
+      <router-link to='/count'>Vuex</router-link> | 
     </div>
     <transition name="fade">
       <router-view/>
