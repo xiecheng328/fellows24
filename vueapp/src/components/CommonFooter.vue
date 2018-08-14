@@ -10,7 +10,6 @@ i<template>
 export default {
   data() {
     return {
-      bgColor: '',
     };
   },
   props: ['menuList', 'footerBgColor'],
