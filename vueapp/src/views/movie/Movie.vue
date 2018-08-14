@@ -114,12 +114,19 @@ export default {
 }
 
 .loading {
-  text-align: center;
   position: fixed;
-  bottom: 1rem;
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.2rem;
+  height: 2.2rem;
   img {
-    width: 3rem;
+    width: 90%;
+    position: absolute;
+    padding: 0.1rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 0.2rem;
   }
 }
 
