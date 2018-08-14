@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <CommonHeader :selectMenu="selectMenu"></CommonHeader>
-    <router-view class="content"/>
-    <CommonFooter @changeTitle="changeTitle" :menuList="menuList"></CommonFooter>
+    <router-view class="content" @switchTab="switchTab"/>
+    <CommonFooter :footerBgColor="selectMenu.bgColor"  @changeTitle="changeTitle" :menuList="menuList"></CommonFooter>
   </div>
 </template>
 
@@ -17,6 +17,14 @@ export default {
   methods: {
     changeTitle(menu){
       this.selectMenu = menu;
+    },
+    switchTab(menuName){ // 'music'
+      // console.log(menuName);
+      this.menuList.forEach(menu => {
+        if(menu.name === menuName){
+          this.selectMenu = menu;
+        }
+      });
     }
   },
   data () {
@@ -44,7 +52,7 @@ export default {
           path: '/photo'
         }
       ],
-      selectMenu: {} // 当前选中的菜单
+      selectMenu: {}, // 当前选中的菜单,
     }
   }
 }

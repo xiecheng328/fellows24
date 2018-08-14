@@ -5,7 +5,10 @@
 
 <script>
 export default {
-    
+    created(){
+        // console.log('music');
+        this.$emit('switchTab', 'music');
+    }
 }
 </script>
 

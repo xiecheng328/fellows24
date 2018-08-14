@@ -5,7 +5,9 @@
 
 <script>
 export default {
-    
+    created(){
+        this.$emit('switchTab', 'book');
+    }
 }
 </script>
 
