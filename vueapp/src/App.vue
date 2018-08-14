@@ -19,7 +19,6 @@ export default {
       this.selectMenu = menu;
     },
     switchTab(menuName){ // 'music'
-      // console.log(menuName);
       this.menuList.forEach(menu => {
         if(menu.name === menuName){
           this.selectMenu = menu;

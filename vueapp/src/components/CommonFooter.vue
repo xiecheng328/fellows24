@@ -16,7 +16,6 @@ export default {
   props: ['menuList', 'footerBgColor'],
   methods: {
     selectMenu(menu) {
-      this.bgColor = menu.bgColor;
       this.$emit("changeTitle", menu);
     }
   },
