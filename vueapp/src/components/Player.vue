@@ -188,7 +188,7 @@ export default {
 }
 
 .audio {
-  background: #ccc;
+  background: #fff;
   height: 1rem;
   position: fixed;
   bottom: 1rem;
