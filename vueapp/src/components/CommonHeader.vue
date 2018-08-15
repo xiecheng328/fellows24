@@ -1,6 +1,6 @@
 <template>
     <header class="header" :style="{background: selectMenu.bgColor}">
-        <span class="header-home">首页</span>
+        <span class="header-home" @click="$router.push('/')">首页</span>
         <h3 class="header-title">{{selectMenu.title?selectMenu.title:'电影'}}</h3>
     </header>
 </template>

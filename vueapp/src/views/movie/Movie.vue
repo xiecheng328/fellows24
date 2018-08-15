@@ -1,17 +1,17 @@
 <template>
     <div>
         <ul>
-            <li class="movie" v-for="movie in movieList" :key="movie.id">
+            <li @click="gotoDetail(movie.id)" class="movie" v-for="movie in movieList" :key="movie.id">
                 <div class="movie-img">
-                    <img :src="movie.images.large" alt="">
-                </div>
-                <div class="movie-info">
-                    <div class="movie-info-title">{{movie.title}}</div>
-                    <div >观众评 <span class="movie-info-average">{{movie.rating.average}}</span></div>
-                    <div class="movie-info-star">主演：
-                        <span v-for="item in movie.casts" :key="item.id">{{item.name}}&nbsp;</span>
-                    </div>
-                </div>
+                      <img :src="movie.images.large" alt="">
+                  </div>
+                  <div class="movie-info">
+                      <div class="movie-info-title">{{movie.title}}</div>
+                      <div >观众评 <span class="movie-info-average">{{movie.rating.average}}</span></div>
+                      <div class="movie-info-star">主演：
+                          <span v-for="item in movie.casts" :key="item.id">{{item.name}}&nbsp;</span>
+                      </div>
+                  </div>
             </li>
         </ul>
         <div class="end" v-show="isEnd">
@@ -59,6 +59,9 @@ export default {
         this.movieList = this.movieList.concat(getList);
         this.isLoading = false;
       });
+    },
+    gotoDetail(movieId){
+      this.$router.push(`/moviedetail/${movieId}`);
     }
   },
   created() {
@@ -70,7 +73,7 @@ export default {
       let scrollTop = document.documentElement.scrollTop;
       let scrollHeight = document.documentElement.scrollHeight;
       let clientHeight = document.documentElement.clientHeight;
-      console.log(scrollHeight, scrollTop, clientHeight);
+      // console.log(scrollHeight, scrollTop, clientHeight);
       if (scrollHeight == scrollTop + clientHeight && !this.isEnd) {
         // 请求数据
         this.getData();
@@ -111,6 +114,11 @@ export default {
       font-size: 0.26rem;
     }
   }
+   a{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
 }
 
 .loading {
