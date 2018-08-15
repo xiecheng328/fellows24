@@ -1,0 +1,39 @@
+{
+  "musicData": [{
+    "title": "我要你",
+    "author": "老狼",
+    "src": "http://up.mcyt.net/down/43422.mp3",
+    "musicImgSrc": "http://omratag7g.bkt.clouddn.com/%E6%88%91%E8%A6%81%E4%BD%A0.jpg",
+    "lrc": "lrc/我要你.lrc"
+  }, {
+    "title": "广东爱情故事",
+    "author": "广东雨神",
+    "src": "http://sc1.111ttt.cn/2018/1/03/13/396131203208.mp3",
+    "musicImgSrc": "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3283023278,2758205127&fm=58&bpow=1824&bpoh=1824",
+    "lrc": "lrc/广东爱情故事.lrc"
+  }, {
+    "title": "就是爱你",
+    "author": "陶喆",
+    "src": "http://up.mcyt.net/md5/53/MTAzMTM1_Qq4329912.mp3",
+    "musicImgSrc": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1407964657,2382644691&fm=58",
+    "lrc": "lrc/就是爱你.lrc"
+  }, {
+    "title": "最美的期待",
+    "author": "周笔畅",
+    "src": "http://sc1.111ttt.cn:8282/2018/1/03m/13/396131229550.m4a?tflag=1519095601&pin=6cd414115fdb9a950d827487b16b5f97#.mp3",
+    "musicImgSrc": "http://singerimg.kugou.com/uploadpic/softhead/400/20180718/20180718110356316.jpg",
+    "lrc": "lrc/最美的期待.lrc"
+  }, {
+    "title": "追光者",
+    "author": "岑宁儿",
+    "src": "http://sc1.111ttt.cn/2017/1/11/11/304112002347.mp3",
+    "musicImgSrc": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2556611937,1195664541&fm=58&bpow=2000&bpoh=2000",
+    "lrc": "lrc/追光者.lrc"
+  }, {
+    "title": "刚好遇见你",
+    "author": "李玉刚",
+    "src": "http://up.mcyt.net/md5/53/OTk1MDE2NA_Qq4329912.mp3",
+    "musicImgSrc": "http://p4.music.126.net/lDyytkTaPYVTb1Vpide6AA==/18591642115187138.jpg",
+    "lrc": "lrc/刚好遇见你-李玉刚.lrc"
+  }]
+}
