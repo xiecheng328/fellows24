@@ -35,13 +35,20 @@
         <div class="audio">
             <audio ref="musicAudio" @play="isPlay=true" @pause="isPlay=false" class="audio-ctrl" :src="musicSrc" autoplay controls></audio>
         </div>
+
+        <ul class="lrclist" ref="lrclist">
+          <li :class=" lrcIndex==index?'selected': '' " v-for="(lrc,index) in lrcList" :key="lrc.time">
+            {{lrc.lrc}}
+          </li>
+        </ul>
     
     </div>
    
 </template>
 
 <script>
-import "@/assets/font/iconfont.css";
+import '@/assets/font/iconfont.css';
+import axios from 'axios';
 export default {
   props: ["musicList"],
   data() {
@@ -53,7 +60,9 @@ export default {
       albumAuthor: "", //歌曲歌手
       isPlay: false, // 是否在播放
       toggleList: true, //歌单的是否显示
-      musicSrc: "" // 歌曲的URL
+      musicSrc: "", // 歌曲的URL
+      lrcList: [] , // 歌词的数组 
+      lrcIndex: -1
     };
   },
   methods: {
@@ -61,7 +70,9 @@ export default {
       this.nowIndex = index;
     },
     play() {
-      this.$refs.musicAudio.play();
+      if(this.nowIndex != -1){
+        this.$refs.musicAudio.play();
+      }
     },
     pause() {
       this.$refs.musicAudio.pause();
@@ -77,6 +88,25 @@ export default {
       if (this.nowIndex == this.musicList.length) {
         this.nowIndex = 0;
       }
+    },
+    // 解析歌词
+    parseLrc(text){
+      // 按照行分割
+      let line = text.split('\n');
+      // 时间 和 歌词 分开
+      line.forEach(elem => {
+          let time = elem.match(/\[\d{2}:\d{2}.\d{2}\]/);
+          if(time != null){
+            let lrc = elem.split(time)[1];
+            let timeReg = time[0].match(/(\d{2}):(\d{2}).(\d{2})/);
+            // 时间转成秒
+            let time2Seconds = parseInt(timeReg[1]) * 60 + parseInt(timeReg[2]) + parseInt(timeReg[3]) / 1000;
+            this.lrcList.push({
+              time: time2Seconds,
+              lrc: lrc
+            });
+          }
+      });
     }
   },
   watch: {
@@ -86,7 +116,28 @@ export default {
       this.albumTitle = nowMusic.title;
       this.albumAuthor = nowMusic.author;
       this.musicSrc = nowMusic.src;
+      this.lrcList = [];
+      this.lrcIndex = -1;
+      // 加载歌词
+      axios.get('/' + nowMusic.lrc).then(res=>{
+        this.parseLrc(res.data);
+      });
     }
+  },
+  mounted(){
+    let musicAudio = this.$refs.musicAudio;
+    this.$refs.musicAudio.addEventListener('timeupdate', () => {
+        // console.log(musicAudio.currentTime);
+        let currentTime = musicAudio.currentTime;
+        this.lrcList.forEach((elem, index)=>{
+          //  console.log(elem.time, currentTime);
+          if(Math.ceil(elem.time) >= currentTime &&  Math.floor(elem.time) < currentTime){
+                this.lrcIndex = index;
+                this.$refs.lrclist.scrollTop = this.lrcIndex * 25;
+          }
+        });
+        // console.log(this.lrcIndex);
+    });
   }
 };
 </script>
@@ -116,6 +167,7 @@ export default {
 }
 
 .album {
+  height: 2.3rem;
   display: flex;
   text-align: center;
   position: relative;
@@ -195,6 +247,23 @@ export default {
   width: 100%;
   &-ctrl {
     width: 100%;
+  }
+}
+
+.lrclist{
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 2rem;
+  top: 3.3rem;
+  overflow-y: scroll;
+  z-index: -1;
+  padding-top: 2rem;
+
+  .selected{
+    color: #299557;
+    font-size: 120%;
   }
 }
 </style>
