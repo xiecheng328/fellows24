@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">开始动画</button>
+    <div id="div1"></div>
+    <script src="velocity.min.js"></script>
+
+    <script>
+        let oBtn = document.querySelector('#btn');
+        let oDiv1 = document.querySelector('#div1');
+        oBtn.addEventListener('click', function(){
+            Velocity(oDiv1, {
+                translateX: '150px'
+            }, { duration: 600 });
+        });
+    
+    </script>
+</body>
+</html>

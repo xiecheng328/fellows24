@@ -13,7 +13,6 @@ export default {
         };
     },
     created(){
-        // console.log('music');
         this.$emit('switchTab', 'music');
         axios.get('/data/musicdata.json').then(res=>{
             this.musicList = res.data.musicData;
