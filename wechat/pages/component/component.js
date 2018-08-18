@@ -13,7 +13,11 @@ Page({
     this.setData({
       nowIndex: e.currentTarget.dataset.tabindex
     });
-    
+  },
+  change(e){
+    this.setData({
+      nowIndex: e.detail.current
+    });
   },
 
   /**

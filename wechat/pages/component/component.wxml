@@ -4,8 +4,8 @@
 </view>
 
 
-<swiper class='content' current="{{nowIndex}}">
-  <swiper-item wx:for="{{itemList}}">
+<swiper bindchange="change" class='content' current="{{nowIndex}}">
+  <swiper-item wx:for="{{itemList}}" wx:key="{{index}}">
     {{item}}
   </swiper-item>
 </swiper>
