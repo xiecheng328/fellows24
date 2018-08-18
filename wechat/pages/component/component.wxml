@@ -1,0 +1,12 @@
+<view class='tab'>
+  <view wx:key="{{index}}" bindtap="select" data-tabindex="{{index}}" 
+  style="color: {{nowIndex==index?'#f00': '#000'}}"
+ wx:for="{{tabList}}" class='item'>{{item}}</view>
+</view>
+
+
+<swiper class='content' current="{{nowIndex}}">
+  <swiper-item wx:for="{{itemList}}">
+    {{item}}
+  </swiper-item>
+</swiper>

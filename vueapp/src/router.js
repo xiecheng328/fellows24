@@ -40,6 +40,9 @@ export default new Router({
     path: '/photodetail/:idx',
     name: 'photodetail',
     component: PhotoDetail
+  }, {
+    path: '*',
+    redirect: '/movie'
   }
   ],
 });

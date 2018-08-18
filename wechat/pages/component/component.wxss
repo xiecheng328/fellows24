@@ -1,0 +1,19 @@
+/* pages/component/component.wxss */
+.tab{
+  display: flex;
+}
+
+.item{
+  flex-grow: 1;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.selected{
+  color: #f00;
+}
+
+.content{
+  border: 2rpx solid #ccc;
+}

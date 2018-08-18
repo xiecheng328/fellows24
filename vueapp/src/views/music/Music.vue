@@ -14,7 +14,7 @@ export default {
     },
     created(){
         this.$emit('switchTab', 'music');
-        axios.get('/data/musicdata.json').then(res=>{
+        axios.get('data/musicdata.json').then(res=>{
             this.musicList = res.data.musicData;
         });
     },

@@ -32,7 +32,7 @@ export default {
     return {
       movieList: [],
       isLoading: true,
-      isEnd: false
+      isEnd: false,
     };
   },
   methods: {
@@ -70,7 +70,7 @@ export default {
   },
   mounted() {
     window.onscroll = () => {
-      let scrollTop = document.documentElement.scrollTop;
+      let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       let scrollHeight = document.documentElement.scrollHeight;
       let clientHeight = document.documentElement.clientHeight;
       // console.log(scrollHeight, scrollTop, clientHeight);

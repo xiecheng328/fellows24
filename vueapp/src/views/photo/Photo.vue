@@ -16,8 +16,11 @@ export default {
   },
   created() {
     this.$emit("switchTab", "photo");
-    axios.get("/data/photodata.json").then(res => {
+    axios.get("data/photodata.json").then(res => {
     //   this.photoList = res.data.photoData;
+    res.data.photoData.forEach(element => {
+        element.src = require('@/assets' + element.src);
+    });
         this.$store.commit('setPhotoList', res.data.photoData);
     });
   },

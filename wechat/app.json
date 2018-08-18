@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/film/film",
+    "pages/component/component",
     "pages/cinema/cinema",
+    "pages/film/film",
     "pages/profile/profile",
     "pages/filmdetail/filmdetail"
   ],
@@ -30,6 +31,12 @@
       }, {
         "pagePath": "pages/profile/profile",
         "text": "我的",
+        "iconPath": "images/profile.png",
+        "selectedIconPath": "images/profile-actived.png"
+      },
+      {
+        "pagePath": "pages/component/component",
+        "text": "组件",
         "iconPath": "images/profile.png",
         "selectedIconPath": "images/profile-actived.png"
       }
