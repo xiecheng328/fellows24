@@ -12,6 +12,7 @@
 
 .selected{
   color: #f00;
+  border-bottom: 2rpx solid #f00;
 }
 
 .content{

@@ -1,7 +1,6 @@
 <view class='tab'>
   <view wx:key="{{index}}" bindtap="select" data-tabindex="{{index}}" 
-  style="color: {{nowIndex==index?'#f00': '#000'}}"
- wx:for="{{tabList}}" class='item'>{{item}}</view>
+ wx:for="{{tabList}}" class='item {{nowIndex==index?"selected":""}}'>{{item}}</view>
 </view>
 
 
