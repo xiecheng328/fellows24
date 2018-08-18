@@ -1,0 +1,11 @@
+.movie{
+  display: flex;
+}
+
+.movie-img{
+  width: 300rpx;
+}
+
+.movie-title{
+  flex: 1;
+}

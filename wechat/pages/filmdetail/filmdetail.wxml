@@ -1,0 +1,6 @@
+<view>
+  {{detail.title}}
+</view>
+<view>
+{{detail.summary}}
+</view>

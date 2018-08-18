@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/film/film",
+    "pages/cinema/cinema",
+    "pages/profile/profile",
+    "pages/filmdetail/filmdetail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f00",
+    "navigationBarTitleText": "唯创网讯",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color" : "#000",
+    "selectedColor": "#f00",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+          "pagePath": "pages/film/film",
+          "text": "电影",
+          "iconPath": "images/film.png",
+          "selectedIconPath": "images/film-actived.png"
+      }, 
+      {
+        "pagePath": "pages/cinema/cinema",
+        "text": "影院",
+        "iconPath": "images/cinema.png",
+        "selectedIconPath": "images/cinema-actived.png"
+      }, {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/profile.png",
+        "selectedIconPath": "images/profile-actived.png"
+      }
+    ]
+  }
+}
