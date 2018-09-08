@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    class King extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          solider:this.props.solider
+        }
+        this.changeSolider=this.changeSolider.bind(this)
+      }
+      changeSolider(num){
+        this.setState({
+          solider:this.state.solider - num
+        })
+      }
+      render(){
+        return(
+          <div>
+            <p>全部士兵数量：{this.state.solider}</p>
+            <General1 changeNum={this.changeSolider} solider={100}/>
+            <General1 changeNum={this.changeSolider} solider={100}/>
+          </div>
+        )
+      }
+    }
+    class General1 extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          solider:this.props.solider
+        }
+        this.addSolider=this.addSolider.bind(this)
+      }
+      addSolider(){
+        this.setState({
+          solider:this.state.solider + 10
+        })
+        this.props.changeNum(10);
+      }
+      render(){
+        return(
+          <div>
+            <p>将军a有士兵：{this.state.solider}</p>
+            <button onClick={this.addSolider}>调兵</button>
+          </div>
+        )
+      }
+      
+    }
+
+    class General2 extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          solider:this.props.solider
+        }
+        this.addSolider=this.addSolider.bind(this)
+      }
+      addSolider(){
+        this.setState({
+          solider:this.state.solider + 10
+        })
+        this.props.changeNum(10);
+      }
+      render(){
+        return(
+          <div>
+            <p>将军b有士兵：{this.state.solider}</p>
+            <button onClick={this.addSolider}>调兵</button>
+          </div>
+        )
+      }
+      
+    }
+    ReactDOM.render(
+      <King solider={100}/>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>
