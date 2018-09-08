@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="react.production.min.js"></script>
+  <script src="react-dom.production.min.js"></script>
+  <script src="browser.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    class Person extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          count:0
+        }
+        // this.add = this.add.bind(this)
+        this.change = this.change.bind(this);
+      }
+      add(){
+        this.setState({
+          count:this.state.count+ this.props.counts
+        })
+      }
+      change(){
+        this.props.changeC("hello world!")
+      }
+      render(){
+        return(
+          <div>
+            <h1>{this.state.count}</h1>
+            <button onClick={this.add.bind(this)}>加一</button>
+            <button onClick={this.change}>change</button>
+          </div>
+        )
+      }
+    }
+    class Add extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          count:"hello",
+          num:10
+        }
+        this.changeF = this.changeF.bind(this);
+      }
+      changeF(text){
+        this.setState({
+          count:text
+        })
+      }
+      render(){
+        return(
+          <div>
+            {this.state.count}
+            <Person changeC={this.changeF} counts={this.state.num}/>
+          </div>
+          
+        )
+      }
+    }
+    ReactDOM.render(
+      <Add/>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>
