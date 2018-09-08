@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="react.production.min.js"></script>
+  <script src="react-dom.production.min.js"></script>
+  <script src="browser.min.js"></script>
+  <style>
+    .dia-bg{
+      display: none;
+      position: fixed;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background-color: rgba(0,0,0,.3)
+    }
+    .dia-content{
+      width: 400px;
+      height: 300px;
+      background: #fff;
+      position: absolute;
+      left: 50%;
+      top:50%;
+      margin-left:-200px;
+      margin-top:-150px;
+    }
+    header{
+      height: 30px;
+      background: #000;
+      color: #fff;
+      padding:5px
+    }
+    header div:nth-child(1){
+      float: left;
+    }
+    header div:nth-child(2){
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    class Dialog extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          type:'login',
+          isShow:false
+        }
+        this.closeF = this.closeF.bind(this);
+      }
+      open(type){
+        this.setState({
+          type:type,
+          isShow:true
+        })
+      }
+      closeF(){
+        this.setState({
+          isShow:false
+        })
+      }
+      render(){
+        return(
+          <div>
+              <DiaBtn>
+                <button onClick={this.open.bind(this,'login')}>登陆</button>
+                <button onClick={this.open.bind(this,'signup')}>注册</button>
+              </DiaBtn>
+              <DiaContent closeC={this.closeF} isShow={this.state.isShow} title={this.state.type}></DiaContent>
+          </div>
+        )
+      }
+    }
+
+    function DiaBtn(props){
+      return(
+        <div>
+            {props.children}
+        </div>
+      )
+    }
+
+    function DiaContent(props){
+      return(
+        <div className="dia-bg" style={{display:props.isShow?'block':'none'}}>
+          <div className="dia-content">
+            <header>
+              <div>{props.title}</div>
+              <div onClick={props.closeC}>X</div>
+            </header>
+          </div>
+        </div>
+      )
+    }
+
+    ReactDOM.render(
+      <Dialog/>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>

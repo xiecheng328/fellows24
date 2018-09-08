@@ -52,9 +52,12 @@
         this.props.askF();
       }
       render(){
+        let arr = React.Children.toArray(this.props.children)
+        console.log(React.Children,this.props.children[1],arr);
+        
         return(
           <div>
-            {this.props.children}
+            {this.props.children[0]}
             <p>将军兵数：{this.state.solider}</p>
             <button onClick={this.ask}>调兵</button>
           </div>
