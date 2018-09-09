@@ -88,12 +88,12 @@
     }
 
     function DiaContent(props){
-      let content = null;
-      if(props.title == 'login'){
-        content = <Login/>
-      }else{
-        content = <Signup/>
-      }
+      // let content = null;
+      // if(props.title == 'login'){
+      //   content = <Login/>
+      // }else{
+      //   content = <Signup/>
+      // }
       return(
         <div className="dia-bg" style={{display:props.isShow?'block':'none'}}>
           <div className="dia-content">
@@ -101,27 +101,23 @@
               <div>{props.title}</div>
               <div onClick={props.closeC}>X</div>
             </header>
-            {props.title == 'login' && <Login/>}
+            {props.title == 'login' ? <Login/>:<Signup/>}
           </div>
         </div>
       )
     }
-    class Login extends React.Component{
-      componentWillUnmount() {
-        console.log('componentWillUnmount')
-      }
-      
-      render(){
-        return(
-          <h1>登陆</h1>
-        )
-      }
+    
+    function Login(props){
+      return(
+        <h1>登陆</h1>
+      )
     }
     function Signup(props){
       return(
         <h1>注册</h1>
       )
     }
+
     ReactDOM.render(
       <Dialog/>,
       document.getElementById('root')
