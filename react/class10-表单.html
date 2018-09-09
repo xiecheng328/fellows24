@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="react.production.min.js"></script>
+  <script src="react-dom.production.min.js"></script>
+  <script src="browser.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    class TestFrom extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          inp:"",
+          sel:"",
+          che:false
+        }
+        this.change= this.change.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+      change(even){
+        console.log(even.target.name);
+        let name = even.target.name
+        this.setState({
+          [name]:even.target.name=="che"?even.target.checked:even.target.value
+        })
+      }
+      handleSubmit(even){
+        console.log(this.inpt.value);
+        console.log(this.refs.input2.value);
+        even.preventDefault();
+      }
+      render(){
+        return(
+          <form onSubmit={this.handleSubmit} >
+            <input type="text"  name="inp" onChange={this.change}/>
+            <input type="text" ref={(inpt)=>this.inpt=inpt} name="inp"/>
+            <input type="text" ref='input2' name="inp"/>
+            <select name="sel" onChange={this.change}>
+              <option value="grapefruit">Grapefruit</option>
+              <option value="lime">Lime</option>
+              <option value="coconut">Coconut</option>
+              <option value="mango">Mango</option>
+            </select>
+            
+            <input type="checkbox" name="che" checked={this.state.che} onChange={this.change}/>
+            <input type="submit" value="提交"/>
+            <p>{this.state.sel}{this.state.inp}{this.state.che?'true':'false'}</p>
+          </form>
+        )
+      }
+    }
+    ReactDOM.render(
+      <TestFrom/>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>
