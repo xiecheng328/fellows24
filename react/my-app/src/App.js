@@ -4,6 +4,7 @@ import './App.css';
 import Class1 from './component/Class1';
 import Class2 from './component/Class2';
 import Class3 from './component/Class3';
+import Class4 from './component/Class4';
 import {
    BrowserRouter as Router, 
    Route, 
@@ -30,6 +31,7 @@ class App extends Component {
             <Route exact path="/class1" component={Class1}/>
             <Route path="/class2" component={Class2}/>
             <Route path="/class3" component={Class3}/>
+            <Route path="/class4" component={Class4}/>
             <Route component={NoMatch}/>
           </Switch>
         </div>
