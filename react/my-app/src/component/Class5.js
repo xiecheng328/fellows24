@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 
+//第三步 创建 action
 //action
-const add=()=>{
+const add=(num)=>{
   console.log("action");
   return{
-    type:'ADD'
+    type:'ADD',
+    step:num
   }
 }
 
 class Class5 extends Component {
   addHadle(){
-    this.props.add()
+    this.props.add(10)
   }
   render() {
     return (
@@ -22,6 +24,8 @@ class Class5 extends Component {
     );
   }
 }
+
+//第五步引入 connect 并向组件内部传入两个参数 可将dispatch 和 state转化成该组件的props
 const mapStateToProps = (state)=>{
   return{
     count:state.count
@@ -29,7 +33,7 @@ const mapStateToProps = (state)=>{
 }
 const mapDispatchToProps = (dispatch)=>{
   return{
-    add:()=>dispatch(add())
+    add:(num)=>dispatch(add(num))
   }
 }
 

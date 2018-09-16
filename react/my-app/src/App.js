@@ -21,6 +21,8 @@ const NoMatch = ()=><h1>404</h1>
 class App extends Component {
   render() {
     return (
+      //第一步 使用 Provider 使整个项目内可以使用redux
+      //此处需要传入 store
       <Provider store={store}>
       <Router>
       <div className="App">
