@@ -1,0 +1,44 @@
+.con-container{
+    border-bottom:1px solid #ddd8ce;
+    padding: .28rem .2rem .28rem 0; 
+}
+.com-user{
+    display: flex;
+}
+.com-user img{
+    width: .73rem;
+    height: .73rem;
+    margin-right:0.05rem;
+}
+.com-user .com-user-info{
+    flex:1;
+}
+.user-name{
+    font-size: .24rem;
+    line-height: 1.41;
+    color: #666;
+    margin-bottom: .06rem;
+}
+
+.com-date{
+    font-size: .24rem;
+    color:#999;
+    line-height: 1.5;
+}
+
+.com-content p{
+    line-height: 1.41;
+    text-align: justify;
+    margin: -.2em 0;
+    word-break: break-all;
+    color: #333;
+    margin-top: .3rem;
+    margin-bottom: .22rem;
+    font-size: .3rem;
+}
+.com-content img{
+    height: 1.1rem;
+    width: 1.1rem;
+    margin-right: .1rem;
+    margin-bottom: .14rem;
+}

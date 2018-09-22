@@ -1,0 +1,54 @@
+.detail-buy{
+    padding:.28rem .2rem;
+    background: #fff;
+    border-bottom:1px solid #ddd8ce;
+}
+.buy-cur-price{
+    color:#06c1ae;
+    font-size: 0.66rem;
+}
+.buy-unit{
+    color:#06c1ae;
+    margin-right: 0.06rem;
+}
+.buy-old-price{
+    color:#999;
+}
+.buy-btn{
+    height: .8rem;
+    width: 2.6rem;
+    background: #F94;
+    color:#fff;
+    line-height: .8rem;
+    font-size: .4rem;
+    border-radius: .06rem;
+    text-align: center;
+    border:none;
+    cursor: pointer;
+    float:right;
+}
+.buy-icon {
+    padding: .28rem .2rem;
+    background: #fff;
+    border-bottom:1px solid #ddd8ce;
+}
+.buy-icon li:nth-child(1),.buy-icon li:nth-child(2){
+    display: inline-block;
+    height: .56rem;
+    width: 50%;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: .56rem;
+    color: #666;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color:#6bbd00;
+}
+.buy-icon li:nth-child(3){
+    color:#666;
+}
+.buy-icon li i{
+    font-weight: bold;
+}

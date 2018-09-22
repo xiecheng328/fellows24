@@ -1,0 +1,16 @@
+.group{
+    border-top: 1px solid #ddd8ce;
+    margin-top: .2rem;
+    margin-bottom: 0;
+    background: #fff;
+}
+.group-title{
+    font-size: .34rem;
+    line-height: 1.5;
+    padding: .22rem .2rem .14rem;
+    color: #333;
+    border-bottom: 1px solid #ddd8ce;
+}
+.group-content{
+    padding: .28rem .2rem;
+}

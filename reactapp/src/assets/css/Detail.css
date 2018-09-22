@@ -1,0 +1,31 @@
+.seller{
+    display: flex;
+}
+.seller-left{
+    -webkit-flex:1;
+    width:0px;
+}
+.seller-right{
+    width: 1.4rem;
+    text-align: center;
+    border-left: 1px solid #ddd8ce;
+    font-size: .5rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    color: #06c1ae;
+}
+.seller-left h5{
+    margin-top: 0;
+    margin-bottom: .3rem;
+    font-size: .32rem;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.seller-left p{
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

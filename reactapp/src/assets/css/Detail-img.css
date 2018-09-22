@@ -1,0 +1,15 @@
+.toutu{
+    position: relative;
+}
+.toutu-img{
+    width:100%;
+    display: block;
+}
+.toutu-text{
+    position: absolute;
+    left:0px;
+    bottom:0px;
+    color:#fff;
+    line-height: 1.7;
+    text-indent: 0.2rem;
+}

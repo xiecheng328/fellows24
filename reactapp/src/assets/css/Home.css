@@ -1,0 +1,62 @@
+.slider .inline{
+  width: 20%;
+  text-align: center;
+  margin-top: 10px;
+}
+.slider .slider-content{
+  display: inline-block;
+  width: 100%;
+  height:200px;
+  background: #fff;
+}
+.slider .slider-content img{
+  width: 50px;
+}
+
+.middle .middle-content{
+  background: #fff;
+  padding:5px 0;
+}
+.middle .middle-content .am-flexbox-item{
+  text-align: center
+}
+.middle .middle-content img{
+  width: 80px;
+  height: 80px;
+}
+.middle .middle-content h3{
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.shop-list{
+  background: #fff;
+  border-top:1px solid #DDD8CE;
+}
+.shop-list .am-list-item img{
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.shop-list .am-list-line .am-list-brief{
+  margin-top:0 !important;
+  color: #666 !important;
+  font-size: .1rem !important;
+}
+.shop-list .am-list-brief div{
+  position: relative;
+}
+.shop-list .am-list-brief .price{
+  font-size: .3rem;
+  color: #06c1ae;
+  padding-right: 5px;
+}
+
+.shop-list .am-list-header{
+  font-size: 15px;
+  color: #333;
+}
+.shop-list .pull-rigt{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
