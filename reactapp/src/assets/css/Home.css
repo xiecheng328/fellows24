@@ -1,62 +1,57 @@
-.slider .inline{
-  width: 20%;
-  text-align: center;
-  margin-top: 10px;
-}
-.slider .slider-content{
-  display: inline-block;
-  width: 100%;
-  height:200px;
-  background: #fff;
-}
-.slider .slider-content img{
-  width: 50px;
+.nav-bar .am-navbar{
+  background-color: #06c1ae;
 }
 
-.middle .middle-content{
+/* 轮播图 start */
+.slider-bar{
   background: #fff;
-  padding:5px 0;
 }
-.middle .middle-content .am-flexbox-item{
+.slider-bar .slider-item{
+  width: 20%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.slider-bar .slider-item img{
+  height: 50px;
+}
+/* 轮播图 end */
+
+.middle-bar{
+  background: #fff;
+}
+.middle-bar .am-flexbox-item{
   text-align: center
 }
-.middle .middle-content img{
-  width: 80px;
-  height: 80px;
-}
-.middle .middle-content h3{
+.middle-bar .am-flexbox-item h3{
   font-size: 16px;
   font-weight: bolder;
+}
+.middle-bar .am-flexbox-item img{
+  height: 80px;
+  width: 80px;
 }
 
 .shop-list{
   background: #fff;
-  border-top:1px solid #DDD8CE;
-}
-.shop-list .am-list-item img{
-  width: 1.1rem;
-  height: 1.1rem;
 }
 .shop-list .am-list-line .am-list-brief{
-  margin-top:0 !important;
-  color: #666 !important;
-  font-size: .1rem !important;
+  margin-top:0;
+  font-size: 12px;
 }
-.shop-list .am-list-brief div{
+.shop-list .sl-info{
   position: relative;
 }
-.shop-list .am-list-brief .price{
-  font-size: .3rem;
-  color: #06c1ae;
-  padding-right: 5px;
-}
-
-.shop-list .am-list-header{
-  font-size: 15px;
-  color: #333;
-}
-.shop-list .pull-rigt{
+.shop-list .sl-info>span{
   position: absolute;
   right: 0;
   bottom: 0;
+}
+.shop-list .am-list-thumb img{
+  height: 65px;
+  width: 65px;
+}
+.shop-list .sl-price{
+  color: #06c1ae;
+  font-size: 18px;
+  padding-right: 5px;
 }

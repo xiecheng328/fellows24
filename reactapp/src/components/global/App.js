@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
+import 'antd-mobile/dist/antd-mobile.css';
 import './../../assets/css/App.css';
-import Test from '../../Test'
-// import img from './../../assets/img/dianying.png'
+import Home from './../home/Home';
+import Detail from './../detail/Detail'
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
 
 class App extends Component {
   render() {
-    let img = "dianying";
     return (
-      <div className="App">
-        <img src={require(`./../../assets/img/${img}.png`)} alt=""/>
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Test/>
-      </div>
+      <Router>
+        <div className="App">
+          <Route exact path="/" component={Home}/>
+          <Route path="/detail/:id" component={Detail}/>
+        </div>
+      </Router>
     );
   }
 }

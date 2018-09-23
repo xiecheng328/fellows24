@@ -10,7 +10,12 @@
 .ant-carousel .slick-slide h3 {
   color: #fff;
 }
-* { touch-action: none; } 
+* { 
+  touch-action: none; 
+} 
+p{
+  margin:0;
+}
 
 .nav .am-navbar{
   background: #06c1ae;
@@ -27,6 +32,13 @@
 }
 .nav .am-search-synthetic-ph{
   background-color: #21897d;
+}
+.nav-bar .am-navbar-title{
+  flex: 4 4;
+}
+.nav-bar .am-navbar-title form{
+  width: 100%;
+  background: #06c1ae;
 }
 
 @font-face {
